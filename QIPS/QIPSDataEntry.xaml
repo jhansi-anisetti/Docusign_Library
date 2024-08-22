@@ -1,0 +1,990 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="QIPSDataEntry" this:QIPSDataEntry.in_QIPSApplicationFullPath="C:\java\QIPS_JDK\QIPS_Switcher.bat" this:QIPSDataEntry.in_ClientID="newlane" this:QIPSDataEntry.in_IssueDate="5/22/2024" this:QIPSDataEntry.in_AgencyName="Test agency name" this:QIPSDataEntry.in_PhoneNumber="4075736098" this:QIPSDataEntry.in_PhExtention="999" this:QIPSDataEntry.in_AgentName="Test agent name" this:QIPSDataEntry.in_AgentEmail="agent@email.com" this:QIPSDataEntry.in_EffectiveDate="5/26/2024" this:QIPSDataEntry.in_ExpirationDate="5/25/2025" this:QIPSDataEntry.in_Carrier="carrier name" this:QIPSDataEntry.in_PolicyNumber="12345" this:QIPSDataEntry.in_PropertyLimit="100" this:QIPSDataEntry.in_LiabilityLimit="200" this:QIPSDataEntry.in_CompDed="300" this:QIPSDataEntry.in_CollisionDed="400" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_QIPSApplicationFullPath" Type="InArgument(x:String)" />
+    <x:Property Name="in_ClientID" Type="InArgument(x:String)" />
+    <x:Property Name="in_IssueDate" Type="InArgument(x:String)" />
+    <x:Property Name="in_AgencyName" Type="InArgument(x:String)" />
+    <x:Property Name="in_PhoneNumber" Type="InArgument(x:String)" />
+    <x:Property Name="in_PhExtention" Type="InArgument(x:String)" />
+    <x:Property Name="in_AgentName" Type="InArgument(x:String)" />
+    <x:Property Name="in_AgentEmail" Type="InArgument(x:String)" />
+    <x:Property Name="in_EffectiveDate" Type="InArgument(x:String)" />
+    <x:Property Name="in_ExpirationDate" Type="InArgument(x:String)" />
+    <x:Property Name="in_Carrier" Type="InArgument(x:String)" />
+    <x:Property Name="in_PolicyNumber" Type="InArgument(x:String)" />
+    <x:Property Name="in_PropertyLimit" Type="InArgument(x:String)" />
+    <x:Property Name="in_LiabilityLimit" Type="InArgument(x:String)" />
+    <x:Property Name="in_CompDed" Type="InArgument(x:String)" />
+    <x:Property Name="in_CollisionDed" Type="InArgument(x:String)" />
+    <x:Property Name="in_SplitEffectiveDate" Type="InArgument(x:String)" />
+    <x:Property Name="in_SplitExpirationDate" Type="InArgument(x:String)" />
+    <x:Property Name="in_SplitPolicyCarrierName" Type="InArgument(x:String)" />
+    <x:Property Name="in_SplitPolicyNumber" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1331,1002</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>QIPSDataEntry_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="34">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="54">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Enters the text fields in QIPS data entry screen. CHeckboxes and VIN data entry is not part of this sequence. All data to be entered in QIPS should be passed as input argument. Only client ID and issue date are mandatory input.  If any argument is left blank , corresponding field will be left blank in QIPS." DisplayName="QIPSDataEntry" sap:VirtualizedContainerService.HintSize="518,937" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="456,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;ClientID: &quot;+in_ClientID+&quot; ,  IssueDate: &quot;+in_IssueDate+&quot; ,  AgencyName: &quot;+in_AgencyName+&quot; ,  PhoneNumber: &quot;+in_PhoneNumber+&quot; ,  PhExtention: &quot;+in_PhExtention+&quot; ,  AgentName: &quot;+in_AgentName+&quot; ,  AgentEmail: &quot;+in_AgentEmail+&quot; ,  EffectiveDate&quot;+in_EffectiveDate+&quot; ,  ExpirationDate: &quot;+in_ExpirationDate+&quot; ,  Carrier: &quot;+in_Carrier+&quot; ,  PolicyNumber: &quot;+in_PolicyNumber+&quot; ,  splitEffectiveDate: &quot;+in_SplitEffectiveDate+&quot; ,  SplitExpirationDate: &quot;+in_SplitExpirationDate+&quot; ,  SplitPolicyCarrierName: &quot;+in_SplitPolicyCarrierName+&quot; ,  SplitPolicyNumber: &quot;+in_SplitPolicyNumber+&quot; ,  PropertyLimit: &quot;+in_PropertyLimit+&quot; ,  LiabilityLimit: &quot;+in_LiabilityLimit+&quot; ,  CompDed: &quot;+in_CompDed+&quot; ,  CollisionDed: &quot;+in_CollisionDed]" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="456,546" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <uix:NApplicationCard sap2010:Annotation.AnnotationText="Input mode windows message is best suited for QIPS application. Hardware event causes some data to be written in the same textbox frequently. Simulate does nto trigges automatic field validation. &#xA;When adding new type into activities , reset input mode to same as app/browser" AttachMode="ByInstance" DisplayName="QIPS App window" sap:VirtualizedContainerService.HintSize="546,2233" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="WindowMessages" ScopeGuid="9992dfa4-7bbf-47e3-8dcc-74cc065da3d9" Version="V1">
+          <uix:NApplicationCard.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512,1871" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Sequence DisplayName="Mandatory Fields Input validations try catch" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="456,493" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                    <TryCatch.Try>
+                      <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+                        <ui:RetryScope.ActivityBody>
+                          <ActivityAction>
+                            <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,244" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DeselectAfter="False" DisplayName="Type Into 'text Client Id / Group'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,52" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="9992dfa4-7bbf-47e3-8dcc-74cc065da3d9" Text="[in_ClientID]" Version="V1">
+                                <uix:NTypeInto.Target>
+                                  <uix:TargetAnchorable DesignTimeRectangle="241, 259, 130, 36" ElementType="InputBox" FriendlyName="'text Client Id / Group'" FullSelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Client Id / Group' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Client Id / Group' role='text' /&gt;" Guid="1fc44806-3940-4193-a327-52427e0c22ad" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIYAAAAoCAYAAAA7b4IPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAC8SURBVHhe7dKhcQNBEABB5Z/Is8/BITgJAxMj41ctkEuW5ktc16Brwd2incu+7wc8EgbpXxgfn18s6r6D8RfGPG7bxqIe43gKY+blOFjI3Hx8//yeh1GLvD9hkIRBEgZJGCRhkIRBEgZJGCRhkIRBEgZJGCRhkIRBEgZJGCRhkIRBEgZJGCRhkIRBEgZJGCRhkIRBEgZJGCRhkF6GMbMWeV9z89MwbnGwponiNIxx+8B67jt4CgOGMAj7cQWZFszDIk85ygAAAABJRU5ErkJggg==" InformativeScreenshot="2188b5d9d762f27a2affd802a631b427.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                                </uix:NTypeInto.Target>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NTypeInto>
+                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DeselectAfter="False" DisplayName="Type Into - IssueDate" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,52" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="9992dfa4-7bbf-47e3-8dcc-74cc065da3d9" Text="[in_IssueDate]" Version="V1">
+                                <uix:NTypeInto.Target>
+                                  <uix:TargetAnchorable DesignTimeRectangle="88, 403, 144, 36" ElementType="InputBox" FriendlyName="'text Date'" FullSelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Date The Other Coverage Information Was Issued' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Date The Other Coverage Information Was Issued' role='text' /&gt;" Guid="a08385a1-9dd4-4a45-b6cc-16b60591df39" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJQAAAAoCAYAAAAYNNPaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADFSURBVHhe7dKxDcJADIZR9l8k3e3ACCxBQUNFfchFUEhyChF/+YonF7a779Ja65AiKKK+grre7nDKsp/yCaqW0zTBKeuoNkHVvPQOh6qV8ni+xkHtPcKIoIgSFFGCIkpQRAmKKEERJSiiBEWUoIgSFFGCIkpQRAmKKEERJSiiBEWUoIgSFFGCIkpQRAmKKEERJSiiBEWUoIgSFFGCIkpQRAmKqMOgau49wlq1MgxqjgrOqJiGQZX5AH617GcTFPxDUAS1/gb6PHF2zRbS0wAAAABJRU5ErkJggg==" InformativeScreenshot="6e95a46a1b8364e52379a53e3aa9e9dc.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                                </uix:NTypeInto.Target>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NTypeInto>
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:RetryScope.ActivityBody>
+                        <ui:RetryScope.Condition>
+                          <ActivityFunc x:TypeArguments="x:Boolean" />
+                        </ui:RetryScope.Condition>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:RetryScope>
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="422,330" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                          </ActivityAction.Argument>
+                          <Sequence sap:VirtualizedContainerService.HintSize="416,261" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[exception.Message+&quot; at source &quot;+exception.Source]" />
+                            <Throw DisplayName="Throw - data entry failure" Exception="[new system.Exception(&quot;QIPS data entry failure for Issue date and Client ID. &quot;+exception.Message+&quot; at source &quot;+exception.Source)]" sap:VirtualizedContainerService.HintSize="354,25" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                          </Sequence>
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                  </TryCatch>
+                </Sequence>
+                <If Condition="[not String.IsNullOrEmpty(in_AgencyName)]" DisplayName="If in_AgencyName" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="If_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="400,337.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Agency Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,221.333333333333" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="9992dfa4-7bbf-47e3-8dcc-74cc065da3d9" Text="[in_AgencyName]" Version="V1">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="241, 336, 267, 36" ElementType="InputBox" FriendlyName="'text Name'" FullSelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Name Of The Insurance Agency Providing VV Information To LI' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Name Of The Insurance Agency Providing VV Information To LI' role='text' /&gt;" Guid="08ecab86-99b1-4659-aebb-77db898ebe43" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAQ8AAAAoCAYAAADg8X8EAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADeSURBVHhe7dSxbQJRFEVB99/IZtsDJbgJAidExFgvAC2wK+wTz0hXL/g/Pl/rut7MzP478TCztKd4nL7PZma727Zi9ojHPC7LYma2u9eAvMVjLsDWdGH2c7kexwNgj3gAiXgAiXgAiXgAiXgAiXgAiXgAiXgAiXgAiXgAiXgAiXgAiXgAiXgAiXgAiXgAiXgAiXgAiXgAiXgAiXgAiXgAiXgAiXgAiXgAiXgAiXgAiXgAiXgAycd4zAXYmi4cxuMeEDOzvU04DuMxu38wM3vdthVv8TAz+8vEw8zC1tsv8GyMMAfjyEoAAAAASUVORK5CYII=" InformativeScreenshot="f0e95b060fd6e9e9652543d90db0ef08.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                        </uix:NTypeInto.Target>
+                      </uix:NTypeInto>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <If Condition="[not string.IsNullOrEmpty(&quot;in_PhoneNumber&quot;)]" DisplayName="If in_PhoneNumber" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="If_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="400,332" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Phone number'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,221.333333333333" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="9992dfa4-7bbf-47e3-8dcc-74cc065da3d9" Text="[in_PhoneNumber]" Version="V1">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="514, 336, 158, 36" ElementType="InputBox" FriendlyName="'in_AgencyName'" FullSelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Verbal Verification Agent Phone Number' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Verbal Verification Agent Phone Number' role='text' /&gt;" Guid="642fc292-8df6-4530-9197-c5ea69899f76" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKIAAAAoCAYAAAB92SGlAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAARQSURBVHhe7Vk5kuMwDPS39CE+x9+YzKHyfcKmesAGm2y0sQaQAB4gQZH2yEOP0VVdLlMUiKN52Zfb7bYajd9NE6JxCCZC/PX7j9H4FMa6Q3oh4sOPjw+j8SmUYsyEiJ8Gw5lAjSH//vuvC9FgeAZMiIYhYEI0DAETomEImBANQ8CEaBgCJkTDEDAhGoZAoxCX9Tpd1svFrTO1nI95dRccc1qvCzW9AWaHMQOdkunluk615y+KcYU4u70gwOmNlOiFqE3A9xbi87EXxK2OPn9W2nUEISpiMyE+E7QtT9d1oZXxh+VdxS7EaZ22HaiwKtrWjInhlYm+o1AgMW57tifOfcU2SuLbt2QSZS3xC/SRPqgFW8D8RH25/wytMTrj28YPNicH79GjDUk8AuQnP2MhXmfyH33YnhC0uIQPGycHduK34zqmeZi8Pegj2nOvW3LYh8eE6B1J+diZTo4VFadklgsjfXCuUDASdYlJwTviU8ZP7dG4UlSA5YoFDbHFse7PxG5QEmJ0ni4xdA253Y88sl857rSerTnsw+NChMH3SQezhBL3iEO1ROcCD37EM5e3842RHT5/pbM8zO5gvz2+zCasTPxuGgK2yclE42T2uF9BwFl+2Fd4R6x+7FveFwm1pO5Jvny8OBS11+LdUMphHx4UokysPvNbUVwFNLtclMJ4bCcUgWykhglSEK3xKX6VJg75etQmBctx+D6liaqBBeb7BiGmrx/E6+vek8M+PChE/s5QCtMMzS4XSCRQXSkBsmD8vcrO+HpEwTaj3MhtGSGFmPlSG3NZYHWbYeWGcy2sUD5e35dtScFp8SpjVylttGEsIbYEGhegR4jx9qOyM74uIWL3WHg0hshVLkRAHGdpzOSyVmAmRBlXY3tXDvswlBD9dlplNOY9K2KTaBrj6xQi948FJX0vCtH7A+18m87EBYRbsoMb+4yrIqyOXjhfJcTeeDswkBDp3cxmgHpeKoznRe2Tdmw/oDU+LV6tnexC+37xkYKDN4tCBPhYacvluCriyHOgxdXa3pPDPowjxGz2FpAJj/1Acaa35q2fsMfnzE0IkYO+f2b3OD62GW6R4bZaXKm3OOkH60KeVCECvP9Ijotzgr76d8ItNukL7eW42tvbc9iHYYTIAdZ0GMaNCuULoTAxyDO6xLj4HfGp48t3GcGHklBrQkzGysRVofdXi6unvTWHfRhEiByctJcj324A8rAOZ6WZzlJ5scH3+EaJffBclXTrjO/on5UEbLu26ukFLcZPMfH4+P4ek8yrFtcd7Yc57EOjEF8QtNUXt8dvhSLmN8drC7F4PgL4FfL+reIchLNb/QjyfjhPiLQitfK+wvDWUSZeIMaA8NNWwwwvLkTEvsrE5xX8iQP/wB8J4bYpVm/DhvOEaDB0wIRoGAImRMMQOBQifhoMZwI1pgqRxWg0PoMoQlWISO5gNJ7NWHeZEI3G76AJ0TgAb+sn2NZltY3iOWgAAAAASUVORK5CYII=" InformativeScreenshot="40ec13760e94dded31c0a1725c23aaa4.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                        </uix:NTypeInto.Target>
+                      </uix:NTypeInto>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_10">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <If Condition="[not String.IsNullOrEmpty(in_PhExtention)]" DisplayName="If in_PhExtention" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="If_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="400,337.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Phone extention'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,221.333333333333" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="9992dfa4-7bbf-47e3-8dcc-74cc065da3d9" Text="[in_PhExtention]" Version="V1">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="676, 336, 84, 36" ElementType="InputBox" FriendlyName="'text Verbal'" FullSelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java idx='2' name='Verbal Verification Agent Phone Number' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Other Coverage Data Entry - (QCSS3910 ver. 1.36) - RPAQIPSBOTNP@DEV' role='internal frame' /&gt;&lt;java name='Verbal Verification Agent Phone Number' role='text' /&gt;" Guid="c26f5cbd-b0a8-418f-bed5-18ab902af4a7" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFgAAAAoCAYAAAB6tz31AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAACySURBVGhD7dArDsMwFAXR7n8jZt5Dl9BNBJQEFae6IFE+siLZGTYjXT1go/OqtS6Om8DwDsDvz+QGt/fMNuA8llLc4M7IF+Bc6yt22Xf+tYFtLIHhBIYTGE5gOIHhBIYTGE5gOIHhBIYTGE5gOIHhBIYTGE5gOIHhBIYTGE5gOIHhBIYTGE5gOIHhBIYTGE5gOIHhboFzra/YNYFXZDe24DaBs/WD69/e8wLsnp3A6OryB4qI62nXKZuYAAAAAElFTkSuQmCC" InformativeScreenshot="344eccc007e9bed714d42d5fa0d66f43.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                        </uix:NTypeInto.Target>
+                      </uix:NTypeInto>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_12">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <If Condition="[not string.IsNullOrEmpty(&quot;in_AgentName&quot;)]" DisplayName="If in_AgentName" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="If_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="400,332" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'AgentName'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,221.333333333333" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="9992dfa4-7bbf-47e3-8dcc-74cc065da3d9" Text="[in_AgentName]" Version="V1">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="765, 336, 245, 36" ElementType="InputBox" FriendlyName="'text Name'" FullSelectorArgument="&lt;java name='Other Coverage Data Entry *' role='internal frame' /&gt;&lt;java name='Name Of The Insurance Agent Providing VV Information To LI' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Name Of The Insurance Agent Providing VV Information To LI' role='text' /&gt;" Guid="77d8e22b-cf42-4397-8d09-db34e7381c67" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPkAAAAoCAYAAAA8LVwaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADWSURBVHhe7dOxbcNAEEVB9d8IM/bgEtyEAyWOHMvYgAYlgXB8DzPAxwZ36bvt+/4ws+5EbhbfU+Qfn19mtvjOTc/+Ip/HbdvMbPG9hv4W+VxgTdPv7P79cx05sDaRQ5zIIU7kECdyiBM5xIkc4kQOcSKHOJFDnMghTuQQJ3KIEznEiRziRA5xIoc4kUOcyCFO5BAncogTOcSJHOJEDnEihziRQ5zIIU7kECdyiBM5xP0b+VxgTdPvZeRH6Ga29ibwy8hnxwczW3fnpt8iN7PWRG6W3v74Bc53XkucA1hqAAAAAElFTkSuQmCC" InformativeScreenshot="a72b92e4ccc6b70eae270493f66f950a.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                        </uix:NTypeInto.Target>
+                      </uix:NTypeInto>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_15">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <If Condition="[not String.IsNullOrEmpty(in_AgentEmail)]" DisplayName="If in_AgentEmail" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="If_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="400,332" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Agent EMail'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,221.333333333333" sap2010:WorkflowViewState.IdRef="NTypeInto_28" ScopeIdentifier="9992dfa4-7bbf-47e3-8dcc-74cc065da3d9" Text="[in_AgentEmail]" Version="V1">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="1014, 336, 242, 36" ElementType="InputBox" FriendlyName="'text EMail'" FullSelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='EMail Of The Insurance Agent Providing VV Information To LI' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='EMail Of The Insurance Agent Providing VV Information To LI' role='text' /&gt;" Guid="dcdd25ae-3375-4080-ba02-328028e8b4b5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPYAAAAoCAYAAADNJgeXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADWSURBVHhe7dOxbcNAEEVB9d8IM/bgEtyEAyWOHMvYgAYlgXB8DzPAxwZ36bvt+/4ws9aEbRbcU9gfn19mtuDOHc/+wp7HbdvMbMG9xv0W9lxgHdPs7P79cx02sB5hQ5CwIUjYECRsCBI2BAkbgoQNQcKGIGFDkLAhSNgQJGwIEjYECRuChA1BwoYgYUOQsCFI2BAkbAgSNgQJG4KEDUHChiBhQ5CwIUjYECRsCBI2BP0b9lxgHdPsZdhH3Ga23ibqy7BnxwczW2vnjt/CNrP1J2yz3PbHLwqukjT0quQfAAAAAElFTkSuQmCC" InformativeScreenshot="90c24d2810e58002aa783019f051308e.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                        </uix:NTypeInto.Target>
+                      </uix:NTypeInto>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_17">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <If Condition="[not String.IsNullOrEmpty(in_EffectiveDate)]" DisplayName="If in_EffectiveDate" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="If_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="400,332" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into Effective date" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,221.333333333333" sap2010:WorkflowViewState.IdRef="NTypeInto_29" ScopeIdentifier="9992dfa4-7bbf-47e3-8dcc-74cc065da3d9" Text="[in_EffectiveDate]" Version="V1">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="241, 409, 166, 36" ElementType="InputBox" FriendlyName="'text Effective'" FullSelectorArgument="&lt;java name='Other Coverage Data Entry - (QCSS3910 ver. 1.36) - RPAQIPSBOTNP@DEV' role='internal frame' /&gt;&lt;java name='Effective Date Of Other Coverage' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Effective Date Of Other Coverage' role='text' /&gt;" Guid="e09c26a0-4a82-44e8-9ddd-d3f5974b031b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKoAAAAoCAYAAABuDmFRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADMSURBVHhe7dKhbQNBFEVR99/Isu0hJaQJA5OgYEcf2HJirQJ3rnSO9PTBDLyXfd/vZqtPqJbYr1A/Pq9mS+y1y9kz1Hncts1sif2N9S3UuXCmaXB2+/o+DhVWIFQShEqCUEkQKglCJUGoJAiVBKGSIFQShEqCUEkQKglCJUGoJAiVBKGSIFQShEqCUEkQKglCJUGoJAiVBKGSIFQShEqCUEkQKglCJeHfUOfCmabBw1AfsZqtsIn0MNTZ44PZ2Xvt8i1UsxUnVAtsv/8AK+kK7ehQClAAAAAASUVORK5CYII=" InformativeScreenshot="899a8592f5a2a3f78c45d195ebb64755.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                        </uix:NTypeInto.Target>
+                      </uix:NTypeInto>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_19">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <If Condition="[not String.IsNullOrEmpty(in_ExpirationDate)]" DisplayName="If in_ExpirationDate" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="If_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="400,337.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into ' Expiration date'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,221.333333333333" sap2010:WorkflowViewState.IdRef="NTypeInto_30" ScopeIdentifier="9992dfa4-7bbf-47e3-8dcc-74cc065da3d9" Text="[in_ExpirationDate]" Version="V1">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="414, 409, 166, 36" ElementType="InputBox" FriendlyName="'text Expiration'" FullSelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Expiration Date Of Other Coverage' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Other Coverage Data Entry *' role='internal frame' /&gt;&lt;java name='Expiration Date Of Other Coverage' role='text' /&gt;" Guid="d7631ef8-8536-4475-a4ed-e0bf6685d06c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKoAAAAoCAYAAABuDmFRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADMSURBVHhe7dKhbQNBFEVR99/Isu0hJaQJA5OgYEcf2HJirQJ3rnSO9PTBDLyXfd/vZqtPqJbYr1A/Pq9mS+y1y9kz1Hncts1sif2N9S3UuXCmaXB2+/o+DhVWIFQShEqCUEkQKglCJUGoJAiVBKGSIFQShEqCUEkQKglCJUGoJAiVBKGSIFQShEqCUEkQKglCJUGoJAiVBKGSIFQShEqCUEkQKglCJeHfUOfCmabBw1AfsZqtsIn0MNTZ44PZ2Xvt8i1UsxUnVAtsv/8AK+kK7ehQClAAAAAASUVORK5CYII=" InformativeScreenshot="dcbf7d0cfef92d3ced5398529831cf83.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                        </uix:NTypeInto.Target>
+                      </uix:NTypeInto>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_21">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                  <ui:CommentOut.Body>
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="546,160" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If Condition="[in_CV]" DisplayName="If CV" sap:VirtualizedContainerService.HintSize="354,52" sap2010:WorkflowViewState.IdRef="If_1">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If.Then>
+                          <Sequence sap:VirtualizedContainerService.HintSize="400,275.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'CV'" sap:VirtualizedContainerService.HintSize="338,159.333333333333" sap2010:WorkflowViewState.IdRef="NCheck_2" ScopeIdentifier="9992dfa4-7bbf-47e3-8dcc-74cc065da3d9" Version="V1">
+                              <uix:NCheck.Target>
+                                <uix:TargetAnchorable DesignTimeRectangle="589, 416, 20, 22" ElementType="CheckBox" FriendlyName="'CV'" FullSelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='CV' role='check box' /&gt;" FuzzySelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='CV' role='check box' check:fulltext='CV' /&gt;" Guid="c7d33dae-0e08-4a4f-b764-271d8755d9b9" ImageBase64="" InformativeScreenshot="bfc5a9d5a4c8d4faa3cd760095689036.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                              </uix:NCheck.Target>
+                            </uix:NCheck>
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_4">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                  </ui:CommentOut.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:CommentOut>
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                  <ui:CommentOut.Body>
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,160" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If Condition="[not String.IsNullOrEmpty(in_CancelDate)]" DisplayName="If in_CancelDate" sap:VirtualizedContainerService.HintSize="354,52" sap2010:WorkflowViewState.IdRef="If_9">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If.Then>
+                          <Sequence sap:VirtualizedContainerService.HintSize="400,337.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into cancel date" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,221.333333333333" sap2010:WorkflowViewState.IdRef="NTypeInto_31" ScopeIdentifier="9992dfa4-7bbf-47e3-8dcc-74cc065da3d9" Text="[in_CancelDate]" Version="V1">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable DesignTimeRectangle="620, 409, 144, 36" ElementType="InputBox" FriendlyName="'text Cancellation'" FullSelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Cancellation Date Of Other Coverage' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Cancellation Date Of Other Coverage' role='text' /&gt;" Guid="efab4e4e-09da-4d1d-bf5f-969ce545576d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJQAAAAoCAYAAAAYNNPaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADGSURBVHhe7dK7bcNAFAVR998IM/bgEtyEAieKHMt4gQR9QIiEJjwHuHjBbjhf67pezKoJytI9BPX9czI7tPt+Zreg5nFZFrNDe47qJai5sMe0Mvs9/20HBUcIipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYrU26Dmwh7TymZQ16jMjmxi2gxqdv1gtnf3/bwEZfbJBGXh1ss/EH3c+QdTirAAAAAASUVORK5CYII=" InformativeScreenshot="2baa4ba507f2afce94cfa2a935efee9a.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                              </uix:NTypeInto.Target>
+                            </uix:NTypeInto>
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_23">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                  </ui:CommentOut.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:CommentOut>
+                <If Condition="[not string.IsNullOrEmpty(in_Carrier)]" DisplayName="If in_Carrier" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="If_10">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="400,332" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Carrier'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,221.333333333333" sap2010:WorkflowViewState.IdRef="NTypeInto_32" ScopeIdentifier="9992dfa4-7bbf-47e3-8dcc-74cc065da3d9" Text="[in_Carrier]" Version="V1">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="768, 409, 340, 36" ElementType="InputBox" FriendlyName="'text Other'" FullSelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Other Coverage Insurance Carrier' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Other Coverage Insurance Carrier' role='text' /&gt;" Guid="500bfe09-59f7-40dc-9e02-8717652685be" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAVgAAAAoCAYAAAC7OeI1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADwSURBVHhe7dSxbQJRFEVB+m9ks+2BEtwEAYkjx1gvAGGjFdoVJ5uRjl7wf3xP67reJEmfz8BKUtSfgT1/XSRJB3ve0+kxsPO4LIsk6WD/R/ZlYOcCsM9s53T9/tkeWACOMbAAEQMLEDGwABEDCxAxsAARAwsQMbAAEQMLEDGwABEDCxAxsAARAwsQMbAAEQMLEDGwABEDCxAxsAARAwsQMbAAEQMLEDGwABEDCxAxsAARAwsQMbAAEQMLEDGwABEDCxAxsACRtwM7F4B9Zjs3B/Y+spKkY824bg7sdP8gSdrf856+DKwk6TMZWElKWm+/4fBHb8ukD1UAAAAASUVORK5CYII=" InformativeScreenshot="684aa4957b83982b09505a8b3ccf899f.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                        </uix:NTypeInto.Target>
+                      </uix:NTypeInto>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_25">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <If Condition="[not String.IsNullOrEmpty(in_PolicyNumber)]" DisplayName="If in_PolicyNumber" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="If_11">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="416,329" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Policy Number'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,217" sap2010:WorkflowViewState.IdRef="NTypeInto_33" ScopeIdentifier="9992dfa4-7bbf-47e3-8dcc-74cc065da3d9" Text="[in_PolicyNumber]" Version="V1">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="1113, 409, 144, 36" ElementType="InputBox" FriendlyName="'text Other'" FullSelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Other Coverage Policy Number' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Other Coverage Policy Number' role='text' /&gt;" Guid="30104872-0d7d-4357-add4-def244414dd7" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJQAAAAoCAYAAAAYNNPaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADGSURBVHhe7dK7bcNAFAVR998IM/bgEtyEAieKHMt4gQR9QIiEJjwHuHjBbjhf67pezKoJytI9BPX9czI7tPt+Zreg5nFZFrNDe47qJai5sMe0Mvs9/20HBUcIipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYrU26Dmwh7TymZQ16jMjmxi2gxqdv1gtnf3/bwEZfbJBGXh1ss/EH3c+QdTirAAAAAASUVORK5CYII=" InformativeScreenshot="e49c39a61f807d0de75eb86f14a65843.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                        </uix:NTypeInto.Target>
+                      </uix:NTypeInto>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_28">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <If Condition="[not String.IsNullOrEmpty(in_SplitEffectiveDate)]" DisplayName="If in_SplitEffective Date" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="If_16">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="416,329" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Split effective date'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,217" sap2010:WorkflowViewState.IdRef="NTypeInto_34" ScopeIdentifier="9992dfa4-7bbf-47e3-8dcc-74cc065da3d9" Text="[in_SplitEffectiveDate]" Version="V1">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="241, 479, 166, 36" ElementType="InputBox" FriendlyName="'text Effective'" FullSelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Effective Date Of Other Coverage for the Split Policy' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Effective Date Of Other Coverage for the Split Policy' role='text' /&gt;" Guid="5256664e-313a-4791-b21e-92ffdb21cbbc" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKoAAAAoCAYAAABuDmFRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADMSURBVHhe7dKhbQNBFEVR99/Isu0hJaQJA5OgYEcf2HJirQJ3rnSO9PTBDLyXfd/vZqtPqJbYr1A/Pq9mS+y1y9kz1Hncts1sif2N9S3UuXCmaXB2+/o+DhVWIFQShEqCUEkQKglCJUGoJAiVBKGSIFQShEqCUEkQKglCJUGoJAiVBKGSIFQShEqCUEkQKglCJUGoJAiVBKGSIFQShEqCUEkQKglCJeHfUOfCmabBw1AfsZqtsIn0MNTZ44PZ2Xvt8i1UsxUnVAtsv/8AK+kK7ehQClAAAAAASUVORK5CYII=" InformativeScreenshot="fbf86625baa41324c9e73524b759e86a.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                        </uix:NTypeInto.Target>
+                      </uix:NTypeInto>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_38">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <If Condition="[not String.IsNullOrEmpty(in_SplitExpirationDate)]" DisplayName="If in_Split Expiration Date" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="If_17">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="416,329" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Split expiration date'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,217" sap2010:WorkflowViewState.IdRef="NTypeInto_35" ScopeIdentifier="9992dfa4-7bbf-47e3-8dcc-74cc065da3d9" Text="[in_SplitExpirationDate]" Version="V1">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="414, 479, 166, 36" ElementType="InputBox" FriendlyName="'text Expiration'" FullSelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Expiration Date Of Other Coverage for the Split Policy' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Expiration Date Of Other Coverage for the Split Policy' role='text' /&gt;" Guid="1f37c3d3-13f4-4704-adc9-fba874156e05" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKoAAAAoCAYAAABuDmFRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADMSURBVHhe7dKhbQNBFEVR99/Isu0hJaQJA5OgYEcf2HJirQJ3rnSO9PTBDLyXfd/vZqtPqJbYr1A/Pq9mS+y1y9kz1Hncts1sif2N9S3UuXCmaXB2+/o+DhVWIFQShEqCUEkQKglCJUGoJAiVBKGSIFQShEqCUEkQKglCJUGoJAiVBKGSIFQShEqCUEkQKglCJUGoJAiVBKGSIFQShEqCUEkQKglCJeHfUOfCmabBw1AfsZqtsIn0MNTZ44PZ2Xvt8i1UsxUnVAtsv/8AK+kK7ehQClAAAAAASUVORK5CYII=" InformativeScreenshot="787bd3c7bf9b5d6c1040e180baaef62d.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                        </uix:NTypeInto.Target>
+                      </uix:NTypeInto>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_40">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <If Condition="[not String.IsNullOrEmpty(in_SplitPolicyCarrierName)]" DisplayName="If in_Split policy carrier" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="If_18">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="416,329" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Split policy carrier name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,217" sap2010:WorkflowViewState.IdRef="NTypeInto_36" ScopeIdentifier="9992dfa4-7bbf-47e3-8dcc-74cc065da3d9" Text="[in_SplitPolicyCarrierName]" Version="V1">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="768, 479, 340, 36" ElementType="InputBox" FriendlyName="'text Split'" FullSelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Split Policy Insurance Carrier' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Split Policy Insurance Carrier' role='text' /&gt;" Guid="fb7ab58d-6231-4c28-882f-ec3fdb676921" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAVgAAAAoCAYAAAC7OeI1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADwSURBVHhe7dSxbQJRFEVB+m9ks+2BEtwEAYkjx1gvAGGjFdoVJ5uRjl7wf3xP67reJEmfz8BKUtSfgT1/XSRJB3ve0+kxsPO4LIsk6WD/R/ZlYOcCsM9s53T9/tkeWACOMbAAEQMLEDGwABEDCxAxsAARAwsQMbAAEQMLEDGwABEDCxAxsAARAwsQMbAAEQMLEDGwABEDCxAxsAARAwsQMbAAEQMLEDGwABEDCxAxsAARAwsQMbAAEQMLEDGwABEDCxAxsACRtwM7F4B9Zjs3B/Y+spKkY824bg7sdP8gSdrf856+DKwk6TMZWElKWm+/4fBHb8ukD1UAAAAASUVORK5CYII=" InformativeScreenshot="a71a7e0a85a4936e336c3e506c06edb5.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                        </uix:NTypeInto.Target>
+                      </uix:NTypeInto>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_42">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <If Condition="[not String.IsNullOrEmpty(in_SplitPolicyNumber)]" DisplayName="If in_Split policy Number" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="If_19">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="416,329" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Split policy number'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,217" sap2010:WorkflowViewState.IdRef="NTypeInto_37" ScopeIdentifier="9992dfa4-7bbf-47e3-8dcc-74cc065da3d9" Text="[in_SplitPolicyNumber]" Version="V1">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="1113, 479, 144, 36" ElementType="InputBox" FriendlyName="'text Other'" FullSelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Other Coverage Split Policy Number' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Other Coverage Split Policy Number' role='text' /&gt;" Guid="818c3a8b-e728-4b9d-b55c-df9a096ff7d7" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJQAAAAoCAYAAAAYNNPaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADGSURBVHhe7dK7bcNAFAVR998IM/bgEtyEAieKHMt4gQR9QIiEJjwHuHjBbjhf67pezKoJytI9BPX9czI7tPt+Zreg5nFZFrNDe47qJai5sMe0Mvs9/20HBUcIipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYrU26Dmwh7TymZQ16jMjmxi2gxqdv1gtnf3/bwEZfbJBGXh1ss/EH3c+QdTirAAAAAASUVORK5CYII=" InformativeScreenshot="61abdddb9901cba0334fdd06dcefd969.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                        </uix:NTypeInto.Target>
+                      </uix:NTypeInto>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_44">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <If Condition="[not String.IsNullOrEmpty(in_PropertyLimit)]" DisplayName="If in_PropertyLimit" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="If_12">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="416,329" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0.5" DisplayName="Type Into 'text Property Limit'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,217" sap2010:WorkflowViewState.IdRef="NTypeInto_24" ScopeIdentifier="9992dfa4-7bbf-47e3-8dcc-74cc065da3d9" Text="[in_PropertyLimit]" Version="V1">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="91, 551, 144, 36" ElementType="InputBox" FriendlyName="'text Property Limit'" FullSelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Property Limit' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Property Limit' role='text' /&gt;" Guid="3a938309-b0ef-4f2b-878d-16f1b746ef68" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJQAAAAoCAYAAAAYNNPaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADGSURBVHhe7dK7bcNAFAVR998IM/bgEtyEAieKHMt4gQR9QIiEJjwHuHjBbjhf67pezKoJytI9BPX9czI7tPt+Zreg5nFZFrNDe47qJai5sMe0Mvs9/20HBUcIipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYrU26Dmwh7TymZQ16jMjmxi2gxqdv1gtnf3/bwEZfbJBGXh1ss/EH3c+QdTirAAAAAASUVORK5CYII=" InformativeScreenshot="ac926046aa20412f57d75f4ae776e3a7.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                        </uix:NTypeInto.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NTypeInto>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap:VirtualizedContainerService.HintSize="400,107.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <If Condition="[not String.IsNullOrEmpty(in_LiabilityLimit)]" DisplayName="If in_LiabilityLimit" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="If_13">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="400,337.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0.5" DisplayName="Type Into 'text Liability Limit'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,221.333333333333" sap2010:WorkflowViewState.IdRef="NTypeInto_25" ScopeIdentifier="9992dfa4-7bbf-47e3-8dcc-74cc065da3d9" Text="[in_LiabilityLimit]" Version="V1">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="241, 551, 144, 36" ElementType="InputBox" FriendlyName="'text Liability Limit'" FullSelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Liability Limit' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Liability Limit' role='text' /&gt;" Guid="a0a192d9-19cd-43ba-8da3-84119f1cdbba" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJQAAAAoCAYAAAAYNNPaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADGSURBVHhe7dK7bcNAFAVR998IM/bgEtyEAieKHMt4gQR9QIiEJjwHuHjBbjhf67pezKoJytI9BPX9czI7tPt+Zreg5nFZFrNDe47qJai5sMe0Mvs9/20HBUcIipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYrU26Dmwh7TymZQ16jMjmxi2gxqdv1gtnf3/bwEZfbJBGXh1ss/EH3c+QdTirAAAAAASUVORK5CYII=" InformativeScreenshot="846df188ee85a3ba0d130161ea4df9a8.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                        </uix:NTypeInto.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NTypeInto>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_32">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <If Condition="[not String.IsNullOrEmpty(in_CompDed)]" DisplayName="If in_CompDed" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="If_14">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="400,337.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'text Comp Ded'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,221.333333333333" sap2010:WorkflowViewState.IdRef="NTypeInto_26" ScopeIdentifier="9992dfa4-7bbf-47e3-8dcc-74cc065da3d9" Text="[in_CompDed]" Version="V1">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="403, 551, 144, 36" ElementType="InputBox" FriendlyName="'text Comp Ded'" FullSelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Comp Ded' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Comp Ded' role='text' /&gt;" Guid="7ed677c6-46d6-4476-8632-42c4217c2997" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJQAAAAoCAYAAAAYNNPaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADGSURBVHhe7dK7bcNAFAVR998IM/bgEtyEAieKHMt4gQR9QIiEJjwHuHjBbjhf67pezKoJytI9BPX9czI7tPt+Zreg5nFZFrNDe47qJai5sMe0Mvs9/20HBUcIipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYrU26Dmwh7TymZQ16jMjmxi2gxqdv1gtnf3/bwEZfbJBGXh1ss/EH3c+QdTirAAAAAASUVORK5CYII=" InformativeScreenshot="ff4776d2450612aafbbab714cb6249b3.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                        </uix:NTypeInto.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NTypeInto>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_34">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <If Condition="[not String.IsNullOrEmpty(in_CollisionDed)]" DisplayName="If in_CollisionDed" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="If_15">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="416,329" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'text Collision Ded'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,217" sap2010:WorkflowViewState.IdRef="NTypeInto_27" ScopeIdentifier="9992dfa4-7bbf-47e3-8dcc-74cc065da3d9" Text="[in_CollisionDed]" Version="V1">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="559, 551, 144, 36" ElementType="InputBox" FriendlyName="'text Collision Ded'" FullSelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Collision Ded' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Collision Ded' role='text' /&gt;" Guid="6ad1dc4f-df74-47c1-9af8-9dbefa1da745" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJQAAAAoCAYAAAAYNNPaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADGSURBVHhe7dK7bcNAFAVR998IM/bgEtyEAieKHMt4gQR9QIiEJjwHuHjBbjhf67pezKoJytI9BPX9czI7tPt+Zreg5nFZFrNDe47qJai5sMe0Mvs9/20HBUcIipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYrU26Dmwh7TymZQ16jMjmxi2gxqdv1gtnf3/bwEZfbJBGXh1ss/EH3c+QdTirAAAAAASUVORK5CYII=" InformativeScreenshot="5f0073efd03602ca0560b96eacfbe337.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                        </uix:NTypeInto.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NTypeInto>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_36">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </If.Else>
+                </If>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Text fields data entry completed&quot;]">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:LogMessage>
+              </Sequence>
+            </ActivityAction>
+          </uix:NApplicationCard.Body>
+          <uix:NApplicationCard.TargetApp>
+            <uix:TargetApp Area="0, 0, 0, 0" ContentHash="piHzu3nRKkyIxQQURzpUbA" FilePath="[in_QIPSApplicationFullPath]" IconBase64="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" InformativeScreenshot="21f9a39898819ab77365fc81903c7fc8.png" Reference="EScIu20vcEukhpFz7phntw/TAXCK_pNtEyZ4zlM_s0dow" Selector="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" />
+          </uix:NApplicationCard.TargetApp>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </uix:NApplicationCard>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="422,383" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="416,314" sap2010:WorkflowViewState.IdRef="Sequence_45">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[exception.Message+&quot; at source &quot;+exception.Source]" />
+              <Throw DisplayName="Throw - data entry failure" Exception="[new system.Exception(&quot;QIPS data entry failure. &quot;+exception.Message+&quot; at source &quot;+exception.Source)]" sap:VirtualizedContainerService.HintSize="354,25" sap2010:WorkflowViewState.IdRef="Throw_1" />
+              <Rethrow sap:VirtualizedContainerService.HintSize="354,25" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="456,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,160" sap2010:WorkflowViewState.IdRef="Sequence_26">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: QIPS" sap:VirtualizedContainerService.HintSize="354,52" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="1a2a2447-aecb-4078-b609-c12c6b438b22" Version="V1">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,170" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="338,54" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,1116" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'text Effective'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,221.333333333333" sap2010:WorkflowViewState.IdRef="NTypeInto_14" ScopeIdentifier="1a2a2447-aecb-4078-b609-c12c6b438b22" Text="in_SplitEffectiveDate" Version="V1">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable DesignTimeRectangle="241, 479, 166, 36" ElementType="InputBox" FriendlyName="'text Effective'" FullSelectorArgument="&lt;java name='Other Coverage Data Entry - (QCSS3910 ver. 1.36) - RPAQIPSBOTNP@DEV' role='internal frame' /&gt;&lt;java name='Effective Date Of Other Coverage for the Split Policy' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Other Coverage Data Entry - (QCSS3910 ver. 1.36) - RPAQIPSBOTNP@DEV' role='internal frame' /&gt;&lt;java name='Effective Date Of Other Coverage for the Split Policy' role='text' /&gt;" Guid="e3f51f16-b5bc-4306-b025-81f532a243be" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKoAAAAoCAYAAABuDmFRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADMSURBVHhe7dKhbQNBFEVR99/Isu0hJaQJA5OgYEcf2HJirQJ3rnSO9PTBDLyXfd/vZqtPqJbYr1A/Pq9mS+y1y9kz1Hncts1sif2N9S3UuXCmaXB2+/o+DhVWIFQShEqCUEkQKglCJUGoJAiVBKGSIFQShEqCUEkQKglCJUGoJAiVBKGSIFQShEqCUEkQKglCJUGoJAiVBKGSIFQShEqCUEkQKglCJeHfUOfCmabBw1AfsZqtsIn0MNTZ44PZ2Xvt8i1UsxUnVAtsv/8AK+kK7ehQClAAAAAASUVORK5CYII=" InformativeScreenshot="9baaea00ee500acdb5188702d2b80c56.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
+                          </uix:NTypeInto.Target>
+                        </uix:NTypeInto>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'text Expiration'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,221.333333333333" sap2010:WorkflowViewState.IdRef="NTypeInto_15" ScopeIdentifier="1a2a2447-aecb-4078-b609-c12c6b438b22" Text="in_SplitExpiriationDate" Version="V1">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable DesignTimeRectangle="414, 479, 166, 36" ElementType="InputBox" FriendlyName="'text Expiration'" FullSelectorArgument="&lt;java name='Other Coverage Data Entry - (QCSS3910 ver. 1.36) - RPAQIPSBOTNP@DEV' role='internal frame' /&gt;&lt;java name='Expiration Date Of Other Coverage for the Split Policy' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Other Coverage Data Entry - (QCSS3910 ver. 1.36) - RPAQIPSBOTNP@DEV' role='internal frame' /&gt;&lt;java name='Expiration Date Of Other Coverage for the Split Policy' role='text' /&gt;" Guid="0d849d98-b174-4f38-b8fb-4ab9c503c61e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKoAAAAoCAYAAABuDmFRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADMSURBVHhe7dKhbQNBFEVR99/Isu0hJaQJA5OgYEcf2HJirQJ3rnSO9PTBDLyXfd/vZqtPqJbYr1A/Pq9mS+y1y9kz1Hncts1sif2N9S3UuXCmaXB2+/o+DhVWIFQShEqCUEkQKglCJUGoJAiVBKGSIFQShEqCUEkQKglCJUGoJAiVBKGSIFQShEqCUEkQKglCJUGoJAiVBKGSIFQShEqCUEkQKglCJeHfUOfCmabBw1AfsZqtsIn0MNTZ44PZ2Xvt8i1UsxUnVAtsv/8AK+kK7ehQClAAAAAASUVORK5CYII=" InformativeScreenshot="683ca2505ca4206a8ece070ac53fec89.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
+                          </uix:NTypeInto.Target>
+                        </uix:NTypeInto>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'text Split'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,221.333333333333" sap2010:WorkflowViewState.IdRef="NTypeInto_16" ScopeIdentifier="1a2a2447-aecb-4078-b609-c12c6b438b22" Text="in_SplitPolicyCarrierName" Version="V1">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable DesignTimeRectangle="768, 479, 340, 36" ElementType="InputBox" FriendlyName="'text Split'" FullSelectorArgument="&lt;java name='Other Coverage Data Entry - (QCSS3910 ver. 1.36) - RPAQIPSBOTNP@DEV' role='internal frame' /&gt;&lt;java name='Split Policy Insurance Carrier' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Other Coverage Data Entry - (QCSS3910 ver. 1.36) - RPAQIPSBOTNP@DEV' role='internal frame' /&gt;&lt;java name='Split Policy Insurance Carrier' role='text' /&gt;" Guid="90602209-8f15-4b8b-a1a0-73509a8c3b20" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAVgAAAAoCAYAAAC7OeI1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADwSURBVHhe7dSxbQJRFEVB+m9ks+2BEtwEAYkjx1gvAGGjFdoVJ5uRjl7wf3xP67reJEmfz8BKUtSfgT1/XSRJB3ve0+kxsPO4LIsk6WD/R/ZlYOcCsM9s53T9/tkeWACOMbAAEQMLEDGwABEDCxAxsAARAwsQMbAAEQMLEDGwABEDCxAxsAARAwsQMbAAEQMLEDGwABEDCxAxsAARAwsQMbAAEQMLEDGwABEDCxAxsAARAwsQMbAAEQMLEDGwABEDCxAxsACRtwM7F4B9Zjs3B/Y+spKkY824bg7sdP8gSdrf856+DKwk6TMZWElKWm+/4fBHb8ukD1UAAAAASUVORK5CYII=" InformativeScreenshot="021c2276e86af19d5266b4b22a47d1aa.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
+                          </uix:NTypeInto.Target>
+                        </uix:NTypeInto>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'text Other'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,221.333333333333" sap2010:WorkflowViewState.IdRef="NTypeInto_17" ScopeIdentifier="1a2a2447-aecb-4078-b609-c12c6b438b22" Text="in_SplitPolicyNumber" Version="V1">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable DesignTimeRectangle="1113, 479, 144, 36" ElementType="InputBox" FriendlyName="'text Other'" FullSelectorArgument="&lt;java name='Other Coverage Data Entry - (QCSS3910 ver. 1.36) - RPAQIPSBOTNP@DEV' role='internal frame' /&gt;&lt;java name='Other Coverage Split Policy Number' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Other Coverage Data Entry - (QCSS3910 ver. 1.36) - RPAQIPSBOTNP@DEV' role='internal frame' /&gt;&lt;java name='Other Coverage Split Policy Number' role='text' /&gt;" Guid="6020a9b4-0282-4b1b-9890-9d124ed97b7f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJQAAAAoCAYAAAAYNNPaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADGSURBVHhe7dK7bcNAFAVR998IM/bgEtyEAieKHMt4gQR9QIiEJjwHuHjBbjhf67pezKoJytI9BPX9czI7tPt+Zreg5nFZFrNDe47qJai5sMe0Mvs9/20HBUcIipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYqUoEgJipSgSAmKlKBICYrU26Dmwh7TymZQ16jMjmxi2gxqdv1gtnf3/bwEZfbJBGXh1ss/EH3c+QdTirAAAAAASUVORK5CYII=" InformativeScreenshot="9ad8086bcbbe31fead2fc7a9fce9cfb4.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
+                          </uix:NTypeInto.Target>
+                        </uix:NTypeInto>
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:CommentOut>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="0, 0, 0, 0" FilePath="C:\java\QIPS_JDK\bin\java.exe" IconBase64="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" InformativeScreenshot="a0b67194b072af87afc742c74e004eb5.png" Selector="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+  </Sequence>
+</Activity>

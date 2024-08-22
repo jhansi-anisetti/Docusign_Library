@@ -1,0 +1,293 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="QIPSLeaseInquiry" this:QIPSLeaseInquiry.in_ClientGroupID="Newlane" this:QIPSLeaseInquiry.in_LeaseNumber="123" this:QIPSLeaseInquiry.in_Zip="9999" this:QIPSLeaseInquiry.in_CustomerNumber="7777" this:QIPSLeaseInquiry.in_Address="Myaddress, st124" this:QIPSLeaseInquiry.in_QIPSApplicationFullPath="C:\java\QIPS_JDK\QIPS_Switcher.bat" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_ClientGroupID" Type="InArgument(x:String)" />
+    <x:Property Name="in_LeaseNumber" Type="InArgument(x:String)" />
+    <x:Property Name="in_Zip" Type="InArgument(x:String)" />
+    <x:Property Name="in_CustomerNumber" Type="InArgument(x:String)" />
+    <x:Property Name="in_Address" Type="InArgument(x:String)" />
+    <x:Property Name="in_QIPSApplicationFullPath" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>663.333333333333,1862</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>QIPSLeaseInquiry_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="The input arguments are option. The non null values will be typed in and rest of the arguments will be ignored." DisplayName="QIPSLeaseInquiry" sap:VirtualizedContainerService.HintSize="642,1797.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="QIPS App window" sap:VirtualizedContainerService.HintSize="580,1656" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="1d9175b8-9eea-4857-a6e3-2f7ef7cb9213" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="546,1360" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If Condition="[not String.IsNullOrEmpty(in_ClientGroupID)]" DisplayName="If - Client/Group ID " sap:VirtualizedContainerService.HintSize="484,54" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="400,337.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'NEWLANE'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,221.333333333333" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="1d9175b8-9eea-4857-a6e3-2f7ef7cb9213" Text="[in_ClientGroupID]" Version="V1">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="137, 259, 187, 32" ElementType="InputBox" FriendlyName="'NEWLANE'" FullSelectorArgument="&lt;java name='LEASE INQUIRY*' role='internal frame' /&gt;&lt;java name='Enter value for Client Id' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='LEASE INQUIRY*' role='internal frame' /&gt;&lt;java name='Enter value for Client Id' role='text' /&gt;" Guid="e066a585-b76a-4b32-be9a-b9612d3df292" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAL8AAAAkCAYAAADYS+uGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAMpSURBVHhe7Zk9jtswEEZzO+ceTrWX2NpA0sflVnblJr5AgBhbuUjr0oWLwECq1IxG0lAUOdSfOVxB/h7wQYZFUhT5RNG7nw6Hg0GQZwzkR542Lfl//r4hyGLjuk6x8tPJ3W6HIIuN/wAE8tMRgKVBXlP+/P0Xl5/4/OUb8kEBekD+mQfoAflnHqAH5J95gB6Qf+YBekD+mQfoMVj+zbn8aMz5GEwQZfX6bq7e+ZfjvazSS12Hr3HafrVtuGnau5jNOixj+3B7Ny/F+dX2UpaOtRfLan00p7Lm3exf43VzjAnQY7z8ESFSTDTLej2+2TY4q/Wb2Tv/cpCE9utPlr+uR0h94eQYE6DHBPkLnMnkdE30UPn8lVs6dz1fqqMgpX+9qfJX93oxp/oovWWacjVKYwL0GCn/3VzL1Tdc6ZLIb1f3ULhKZLpuXcZ7QKS6U+S3Wx5qv6d+jjEBeoyWf7+VV+cUE02p6oQi8WpMYruf+XxL2kfkr+vQm8W2KazqlBxjAvQYL38hpTSBqeR35bPfeRJKUvP1W/VGyi+9Pdz79svnGBOgxyT5xVW2Y6K7aYslrbbcNgsTv5bX1lj5hXalh5GTY0yAHpPkdyeRpUgnf7j6+mLbMo5oVf+8rdBI+bm/rdVbkJqTY0yAHpPl9yXtmuih8nFc2SXRwzLh24IyRn7poeNU9x62k2NMgB6T5ae4W4KU8rvSDhGbr+1vTUbJz/3vwutDjjEBejwmv13piu/5Lx4p5HeEjwkclmn3rSwzQn7uazftt0KOMQF6PCQ/xa5ut3tC+ZutzqZsI9yKuGX2Zd+EMgPltw+S0AaH78V9u+QYE6DHw/I352oSyE+p6tb/QBJ+bAZlnOtyBstfl5Pa4DRC+z+ydccE6JFE/tZ+WZjofoRV22nT38vbMixtgVTGPR+DJGRRu4RsbWfqMcgxJkCPJPJT7KSmkt9uReJSNmUiAg6Q/9f3H71bHo5/jznGBOgxWH7kYwL0gPwzD9AD8s88QA/IP/MAPSD/zAP06JWfjgAsDfI6Kj8/AAiy1JD4UfkpXABBlhjX9UB+BHmWQH7kSXMw/wG5MVSP6sbNsAAAAABJRU5ErkJggg==" InformativeScreenshot="baf6d0f44dffe6e3ab5f52f2c685728d.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <If Condition="[not String.IsNullOrEmpty(in_LeaseNumber)]" DisplayName="If - Lease Number " sap:VirtualizedContainerService.HintSize="484,54" sap2010:WorkflowViewState.IdRef="If_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="400,468" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,96" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Enter lease number &quot;+in_LeaseNumber]" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into lease number" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,221.333333333333" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="1d9175b8-9eea-4857-a6e3-2f7ef7cb9213" Text="[in_LeaseNumber]" Version="V1">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="137, 319, 595, 31" ElementType="InputBox" FriendlyName="'%'" FullSelectorArgument="&lt;java name='LEASE INQUIRY*' role='internal frame' /&gt;&lt;java name='Enter value for Lease Number' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='LEASE INQUIRY*' role='internal frame' /&gt;&lt;java name='Enter value for Lease Number' role='text' /&gt;" Guid="1eac0dcf-03c3-43a1-849f-965cc72bb7aa" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAlcAAAAjCAYAAAC5Fy96AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAHiSURBVHhe7d2xcatAGIVR2qIhyqENZYTkLsEpBThw4sgxZlcggxAjQBtpz5n5xqMnFXDnR6NXNE3TS5IkKU3GlSRJUsIW4+rj80uSJEkHmm+p0G1chTcvl4skSZIOdD+wVuMq/AUA4Lmwm0LfP7/b4woAgP2MKwCAhIwrAICEjCsAgISMKwCAhA6Nq66u+rIo+iJUVn3bjW8stH01vF+140sAgIzsH1dtFUdVFRdVN7wMI2sYWNd3b+K/l/XwCQCA/OweV6sxdRtb4+ugq+Nly9UKAMjVznHV9XV5d5Eah1RZ/9+oXK0AgNylG1euVgAAe8fV88eCrlYAAKm+0B6vVmU/e0IIAJCl/eNq0A0D69FPMcShNZ2whqFVhUeI42cMLgAgJ4fG1UPxojVdra6/cRWGVrxv1eXsPQCA9/fiuBq/6D5erdZj6n9sAQDk4LVxtbhajY8HjSsAIGMvjKvl1SowrgCA3J0fV3dXq2DrseD8h0YBAN7ZyXF1vVqtR5MvtAMAeTs3ruLVav2fNkd+igEAyNjJyxUAAI8YVwAACRlXAAAJGVcAAAkZVwAACT0dV+EvAADPhd20Oa6mgSVJkqT9hWG1Oa5C0wckSZK0r/mWWo0rSZIknc+4kiRJSlbT/wHryrMdppROcgAAAABJRU5ErkJggg==" InformativeScreenshot="b14f40f88f8b65b0836522e403b6458d.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="400,104.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <If Condition="[not String.IsNullOrEmpty(in_CustomerNumber)]" DisplayName="If - Customer Number" sap:VirtualizedContainerService.HintSize="484,54" sap2010:WorkflowViewState.IdRef="If_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="400,468" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,96" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Enter customer number &quot;+in_CustomerNumber]" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into lease number" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,221.333333333333" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="1d9175b8-9eea-4857-a6e3-2f7ef7cb9213" Text="[in_CustomerNumber]" Version="V1">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="137, 392, 280, 32" ElementType="InputBox" FriendlyName="'%'" FullSelectorArgument="&lt;java name='LEASE INQUIRY*' role='internal frame' /&gt;&lt;java name='Enter value for Customer Number' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='LEASE INQUIRY*' role='internal frame' /&gt;&lt;java name='Enter value for Customer Number' role='text' /&gt;" Guid="d4342242-e7f9-4cd0-8273-9cea22be615b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAARwAAAAkCAYAAABbqoWUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAGxSURBVHhe7duxceJQFIZR2lJDKkdtkBGSu4RNVcAGmzhyLOs+nkBCyAikfYnPmfnHw0L8zRX2Hk6nU2dmVmKCY2bFNgnOx5+/Zma7bdyX2DU48ebxeDQz22330ZkFJ34CbBUtif37/FoODsBeBAcoRnCAYgQHKEZwgGIEByjmpeC0Td1Vh0N3iFV1d27zGxPnru7fr8/5JUC2PjjnOoWmTpVp+5cRnj46l3ev0r9XTf8JgKnVwZkF5hqg/Dq0TbqAXDfAIyuD03ZNdXe55LhUze2Wcd0AP9kvOK4b4ImVwXn+SOW6AZ5ZHZxbYCIpd18ap+um6kZPVwAz64PTa/voPPq1eIrPcOr08anj8St/RoSAwUvBeShdPsN1c/kbnIhPuoOaavQe8NttDE7+MjlfN/PA3AIEsC04k+smP1oJDrBgQ3Cm100QHOAn7wfn7roJS49U4z8OBH6vN4NzuW7mIfGlMbDsveCk62b+HzcTvxYHFrx54QC8TnCAYgQHKEZwgGIEByjmaXDiJ8BW0ZLF4AzRMTPbaxGbxeDEhg+Yme2xcV9mwTEz+18THDMrtFP3De306YN1TYImAAAAAElFTkSuQmCC" InformativeScreenshot="6d4d6c8cef52b2e03dc528f3eb3f49e1.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="400,104.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <If Condition="[not String.IsNullOrEmpty(in_Zip)]" DisplayName="If - ZIP" sap:VirtualizedContainerService.HintSize="484,668.666666666667" sap2010:WorkflowViewState.IdRef="If_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="400,473.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,96" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Enter ZIP &quot;+in_Zip]" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into zip" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="338,221.333333333333" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="1d9175b8-9eea-4857-a6e3-2f7ef7cb9213" Text="[in_Zip]" Version="V1">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="631, 393, 118, 32" ElementType="InputBox" FriendlyName="'92399'" FullSelectorArgument="&lt;java name='LEASE INQUIRY*' role='internal frame' /&gt;&lt;java idx='2' name='Enter value for Customer Number' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='LEASE INQUIRY*' role='internal frame' /&gt;&lt;java name='Enter value for Customer Number' role='text' /&gt;" Guid="8978aa61-f108-4de1-9a62-2d3774d92a18" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHoAAAAkCAYAAABG3S5jAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAJ4SURBVHhe7Zg9buswDIB9LV1Ix/E1snn03iN01QE6dHnTm1XRFvUvW2yzmOIHEEFiRiD4hbLiZds2K8E/RPQkkYn++PySYBKpV4ggGi6+Xi8JJlHKrkTDq/BswCHE97//fdECD0T0JIjoSRDRkyCiJ0FETwJRtLG7VnZZljOUsno3/lqB2a1210PuoqzSu1uhhbHr6LqUGki5vCGIdjKUb1gRIDDDrFY18o5QayEbfhCNPBdqLaUQaiDl8mdYtFn9ZChtw1C4qcVmxt7FBqs1meBjwvHzKDCsm0y72fGHomzqerwGWu4MDIpGeXnjT5xAaGjoXPk+ASc9XMN1nQz/CYKi4jKUGii5czAo2jen2nYB39TmtZKrdXJq0ZQa3lUvH2iim1OA01NPZcWuD3l302Rc3jH5mQxKDW+qlxE00c3mXF1LwQa3ttOTcF+FcJLz9Sg1vKNeXgyKdu3R0BwXIABFJYebu8bh9+uTdAREq/QvWbG9Umr4a73cGBYdJ6EMbfXR1F7j4L+sz73ZsiPuOzjd2XcoNfy2Xp4QRDtgIpIHEErDtFzd8/Da+d+1P8stOutSaiDXyxea6CZ+coptFpqME3W1XV9x7gQjQjo1NKHk8mFQNE5B4yDlT9K5TJR898jxqum4Boqm1ECtlz/DEx1OxMkW3HuChffkkVtyev8OS6SHpmQRSg2U3BkYFh0nrI5sOq6ec2NkE9xft570wRoOKLn8IYh2FIcbeI68llszPhS5ilJgua6buO7hbaQGhJLLHJpo4bGI6EkQ0ZMgoidBRE/CrWh4FZ4NOOyKRtkSPAIkd0VDYILE8yP1WomW4BkieorY7A+0iCWOlnlyFgAAAABJRU5ErkJggg==" InformativeScreenshot="bfe45c6a54c36cdb8f31cd9f1f454071.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="400,104.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <If Condition="[not String.IsNullOrEmpty(in_Address)]" DisplayName="If - Address" sap:VirtualizedContainerService.HintSize="484,54" sap2010:WorkflowViewState.IdRef="If_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="400,468" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,96" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Enter address &quot;+in_Address]" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into address" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,221.333333333333" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="1d9175b8-9eea-4857-a6e3-2f7ef7cb9213" Text="[in_Address]" Version="V1">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="631, 458, 540, 32" ElementType="InputBox" FriendlyName="'%'" FullSelectorArgument="&lt;java name='LEASE INQUIRY*' role='internal frame' /&gt;&lt;java name='Enter value for Customer Contact' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='LEASE INQUIRY*' role='internal frame' /&gt;&lt;java name='Enter value for Customer Contact' role='text' /&gt;" Guid="93cd0376-1de2-4590-bdc9-9fbdfb82830d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAiAAAAAkCAYAAACwh4EjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAHmSURBVHhe7d2xcaNQFIZRtUVDlEMbyhQqdwmbUsAGm2zkGHOfQEIgzDPCLzpn5huPVirgn4vsPV0ul06SJKlkBogkSSre0wD5+PNXkiTp8KZ7I7oPkHjzfD5LkiQd3nyELAZI/AQAOEpsi+jf/8/1AQIAcDQDBAAozgABAIozQACA4gwQAKA4AwQAKO5HA6Rt6q46nbpTVNXdtR3eeHLt6v79+jq8BACYyR8g1zoNjzqtjrZ/GUOkHyG3d+/Sv1dN/wkAgNeyB8hicNwHyfA6tE26kLh+AADfyRwgbddUs8vGMDaq5nHrcP0AAHIcN0BcPwCATJkDZPsRjOsHAJAre4A8BkdMjNmXUNP1o+omT2MAAFblD5Be24+QV7+Gm8bIeArpx0gdj2uGzxglAMDcjwbIS+kyMl4/bn8DJMZIupM01eQ9AICbNwfI8OXU4fqxHByPQQIAMHpvgDxdP4ZHMQYIALDhjQHyfP0IBggAkGP/AJldP8LaI5jpHysDANg5QG7Xj+Ww8CVUAGDbvgGSrh/L/4gu8Wu4AMCGnRcQAID9DBAAoDgDBAAozgABAIozQACA4jYHSPwEADhKbIvVATKOEEmSpKOL8bE6QKLxA5IkSUc23RuLASJJkvTbGSCSJKlwl+4LiKB6Q8v7jrsAAAAASUVORK5CYII=" InformativeScreenshot="324d16c1bfe0498f9855ff4be95ca0f8.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="400,104.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <uix:NClick ClickType="Single" DisplayName="Click 'Active Leases'" sap:VirtualizedContainerService.HintSize="484,159.333333333333" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1d9175b8-9eea-4857-a6e3-2f7ef7cb9213" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable Accuracy="0.69" DesignTimeRectangle="583, 718, 285, 72" ElementType="Button" FriendlyName="'Active Leases'" FullSelectorArgument="&lt;java name='LEASE INQUIRY *' role='internal frame' /&gt;&lt;java name='Active Leases Only*' role='push button' /&gt;" FuzzySelectorArgument="&lt;java name='LEASE INQUIRY *' role='internal frame' /&gt;&lt;java name='Active Leases Only*' role='push button' check:text='Active Leases Only: Shift+Ctrl+F6' /&gt;" Guid="4c01b3ec-b7e6-4940-97d5-8e0b84876094" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAASEAAABMCAYAAAAiAAErAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAQlSURBVHhe7drBdeI6GIDRFORS6ITd64LVK8KL7NICMyVME9MGz7KRLRs5QBL48Xl3cTdgOzbn6IskePv4+DgBRBEhIJQIAaEuIvT+/g7wMMvmzCKUD/r16xfAj/v952+v7M5FhGonAvyUf/6dmpOIEPBUIgSEEiEglAgBoUQICCVCQCgRAkKJEBBKhIBQIgSEEiEglAgBoUQICCVCQCgRAkKJEBBKhIBQIgSEEiEglAgBoUQICCVCQCgRAkKJEBBKhIBQIgSEEqGNaQ+7U/P2dno7a5r96dAeq8dGOR4Pp935/naH+++t3Tfduc1p3z1Xea264bh03vHYng67pvh8mu7vt+N1j+2+f6/ZT68RT4Q2ZBic5QDMdqfD8XVC9J0Ijed2cW27Z7onQodd7f3pHlKk9k167bU+r/87EdqIaQB1/8l3h2GAttMAfaX/7t+JUA5tfp5br9Uf1wzn5tnPGKXu88rH5dfMhl6HCG3ELELFAKoNtKTdl8u2blmyGHR56TK8P2h2w+xjeD8P/m6mMV6rm0GcZx0Xy8LquUMQyr9THrdUPuM0e/la0IbnG84rP5tjd9/9a+eZVnkOMURoQ8rlRtOkINT/m5fHlarxWjoP2HLwj84Dd3VZeOsSahHMbBa+cZ/n/gjlvZ90zjJ603uWZK9ChDakHob65ms5a1kOvOk6xcymm+0M11we0+mi0cenO7Z8fVwyjdevbCYXG+eHMV71ANQCUX3mQm1ZNV2n08U6B61/b7zeFDpiidDG9MuM2VJrMAYhLzdWlLOJ/lqH/Wk3W5ZdRmh2TiUUS6vnjve2EqHKUukrEcqmGVs9avcs73gcEdqwfmP6vIeSB9r6N2iDNPBq+0GTZYTmM4ZrIemPeVCE7o1G7Rlq+07EEqGNWBvAy6XQGKFiIC9N10ob1t1Sq20vArAaoWfMhIr3b41QOrfpvx2rnVtG6Lbr8TwitBHl4GlSOPpQpKXZfMlR7ofkvaL0TVZ5zBSq8zlpdpA3qq9FqHYfxYwsLY/WBvrVCFUCd2s0yufOS7TPl2Pz5yKOCG3IZ0utcm/k2rdjUwxqcpjWB+v6fSzPvTNClb95a4SStfsqP5tbZnI8lwhtTP/7nHEfqJO+HSsGWZJnSHlmkAb18pjZ74j6r/vnAbg2Y6j9Tmj8Nu7LEfr+74Qufh9VfHOYjPfwyXKV5xIhXkqezZSzl5/06OtzPxHipYzLpQfMVKaZlqXYKxEhXs6wp/XzG8dj4FZ+sU0MEQJCiRAQSoSAUCIEhBIhIJQIAaFECAglQkAoEQJCiRAQSoSAUCIEhBIhIJQIAaFECAglQkAoEQJCiRAQSoSAUCIEhBIhIJQIAaFECAglQkCoqxH6/edv9USA70p9+TRCST4I4BGWzbmIEMAziRAQSoSAQB+n/wD1tvAU+uYaCwAAAABJRU5ErkJggg==" InformativeScreenshot="73a712594d6826f8c365c6fb28905802.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" ContentHash="piHzu3nRKkyIxQQURzpUbA" FilePath="[in_QIPSApplicationFullPath]" IconBase64="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" InformativeScreenshot="21f9a39898819ab77365fc81903c7fc8.png" Reference="EScIu20vcEukhpFz7phntw/TAXCK_pNtEyZ4zlM_s0dow" Selector="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

@@ -1,0 +1,221 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="QIPSSaveRecord" this:QIPSSaveRecord.in_QIPSApplicationFullPath="C:\java\QIPS_JDK\QIPS_Switcher.bat" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_QIPSApplicationFullPath" Type="InArgument(x:String)" />
+    <x:Property Name="out_RecordNumber" Type="OutArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1331,820</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>QIPSSaveRecord_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="35">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="70">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="QIPSSaveRecord" sap:VirtualizedContainerService.HintSize="518,421" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="456,310" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Quality Insurance Products and Services" sap:VirtualizedContainerService.HintSize="385,52" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="cb90efed-9a2e-498d-8157-893e34532630" Version="V1">
+          <uix:NApplicationCard.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="916,1454" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:String" Default="1" Name="rowIndex" />
+                  <Variable x:TypeArguments="x:Int32" Name="loopIndex" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="854,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Saving the record&quot;]" />
+                <uix:NClick ClickType="Single" DisplayName="Click 'Save'" sap:VirtualizedContainerService.HintSize="854,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cb90efed-9a2e-498d-8157-893e34532630" Version="V1">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable DesignTimeRectangle="11, 79, 82, 38" ElementType="Button" FriendlyName="'Save'" FullSelectorArgument="&lt;java name='Save' role='push button' /&gt;" FuzzySelectorArgument="&lt;java name='Save' role='push button' check:text='Save' /&gt;" Guid="b8156545-e35f-4572-9586-a36aecb7b4c1" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFYAAAAqCAYAAAAptqxNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAIuSURBVGhD7ZrNbcMwDEY7kEbRJrp1C506hA65dQW5IxRZIKeuoZL6pRzZaVMTaloGeIcktA0/f6QUIE/lFeB1uVzCsizCAWStIvZoslYRezRZaxN7Op2EO9gVez6fh0XCPm/vHxH6WdbaxNIvha/z/PLavc9aRexPEbFMiFgmRCwTIpYJEcuEiGVCxDIhYpmYKtZZHRRcCi+HKGWCdX5Y+2hME+uMqkJ7dLD+8eVOEeu9C0YlkUrb4ECkdzboLFcZNzzukZgvlki0OqcWZNNaq/t0K23iw6DH0PPQ82vb0u8MHT0qaMYHOG0UVImAUtD+bnyTtK4jy/cwp+N7mM9FtncmC2xjZes8XN0xTaz3rfUrClJkafJKDYpPgjB1qT5JazUqmFqTE17kU9G5ZiT/SKaJRWKbd+2ZWKco1lkTdDcSrtOIx43GQE31BnRcHMVUsZS4eGUhLY3X87XRxHbjYJDE7R1I4s+IbQnq27C1Z2rrVocLDeweYA4PZ2pNKdTlB0FTX8WSY7iZI5bMV4XC4GbTWCjJSsKbkJZgUxahlaQ+lW3exuvVB4bpTMLxx0mq7R/uUUwbBXvtWdK2Pxu30g4MkvlvdgVI/Elb5yqAu4LVjXZ7z7gtu94FIHTRGskqHVHPFccLj1Tk1yxefw0Ry4SIZULEMiFimRCxTIhYJkQsEyKWCRHLxE2x6z/QCrdBZ7ti8a/ypUj4HlTqUOy6QLiPrFXEHk3WKmKPZQmfPYn0FL3h+Z0AAAAASUVORK5CYII=" InformativeScreenshot="c41f25ed10b6004600ad1fbd30af27de.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='Quality Insurance Products and Services' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
+                  </uix:NClick.Target>
+                </uix:NClick>
+                <uix:NCheckState DisplayName="Check App State 'text Disability Amount'" sap:VirtualizedContainerService.HintSize="854,1029" sap2010:WorkflowViewState.IdRef="NCheckState_1" Version="V1">
+                  <uix:NCheckState.IfExists>
+                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,812" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="errorMessage" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,96" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Error mesage appeared&quot;]" />
+                      <uix:NGetText DisplayName="Get Text 'Issue Date'" sap:VirtualizedContainerService.HintSize="338,159.333333333333" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="cb90efed-9a2e-498d-8157-893e34532630" Version="V1">
+                        <uix:NGetText.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="1492, 496, 232, 48" ElementType="Text" FriendlyName="'Issue Date'" FullSelectorArgument="&lt;java name='Other Coverage Data Entry - (QCSS3910 ver. 1.36) - RPAQIPSBOTNP@DEV' role='internal frame' /&gt;&lt;java name='Forms Issue Date must be provided.' role='internal frame' /&gt;&lt;java name='Issue Date must be provided.' role='option pane' /&gt;&lt;java name='Issue Date must be provided.' role='label' /&gt;" FuzzySelectorArgument="&lt;java name='Other Coverage Data Entry *' role='internal frame' /&gt;&lt;java name='*' role='internal frame' /&gt;&lt;java name='*' role='option pane' /&gt;&lt;java role='label' /&gt;" Guid="fb64c50d-8ad6-4ef5-b7fb-cc5d8dfbb1eb" ImageBase64="" InformativeScreenshot="6263609095f5269163e43dc5264b25dc.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='Quality Insurance Products and Services' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
+                        </uix:NGetText.Target>
+                        <uix:NGetText.Text>
+                          <OutArgument x:TypeArguments="x:String">[errorMessage]</OutArgument>
+                        </uix:NGetText.Text>
+                      </uix:NGetText>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,96" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[&quot;QIPS Error message: &quot;+errorMessage]" />
+                      <uix:NClick ClickType="Single" DisplayName="Click 'OK ALT O'" sap:VirtualizedContainerService.HintSize="338,159.333333333333" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cb90efed-9a2e-498d-8157-893e34532630" Version="V1">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="1540, 496, 69, 34" ElementType="Button" FriendlyName="'OK ALT O'" FullSelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='*' role='internal frame' /&gt;&lt;java name='*' role='option pane' /&gt;&lt;java name='OK ALT O' role='push button' /&gt;" FuzzySelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='*' role='internal frame' /&gt;&lt;java name='*' role='option pane' /&gt;&lt;java name='OK ALT O' role='push button' check:text='OK ALT O' /&gt;" Guid="d90d1149-daa1-490c-959e-e4ad30828078" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEkAAAAmCAYAAACI0bZTAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAICSURBVGhD7dgxTsMwFIBhzmX1ANwgUpcuXKAsmXqBSIglY7YO3egBMjF2JEi9QBEDCwN0Nn5RXus4z45RYkdxPfxqJSeW/MkxoXdf32ceMxeRLLJCun94CjZqvWpGJJxot9sFmw2WFknGef/4DTYZi3KASCQEoiZdLBZ1c/4On2omqA6SCSj0dFARSer17bMf6ZaBMAoqIilFJIuMSBHo2uPzSwsqIhFNhlSdjnybb3iyZJf3FrZc8XVe8vL007m+zFecsQ3fEmPVoeAJY2Jc3L/vjg9tEqTqUPK1hKPGlgLj0F6sDkkGypR7xso7EuygrAFK0qKFAXhZumqgitaOopCuQF3UMfOOBIutgfIjOQ5R16hI1V48qgBE7Lqx84qEu0h3tmDVSTyONcB1N8lIpQCidpurPCM1i09Lclxum7YxESlrdlnfbhyzWSEhDhNnGRz8Lg9rudkhJc29rUPb8SM3yzMJr0M4G/QheUWCLjti4F83DHZc33xD84405ntSfQ/uupBeJqF6YQ0U1X/euCHX59MkSNCY/7vheD2Hg/NpMqQ5pUVyBYW7xjZqDp+pQJBzpLkVkSzqRYJuGYoCgkgk+DGcmgSSz465fodPKmskqA8qxHRAEIkEIVToWIBjAoK0SBDcCOFEIYZrpNaPGZEwnCjEqPWqWSHdehGptzP/AwFT+vlt6iuuAAAAAElFTkSuQmCC" InformativeScreenshot="851100346c841123314e859b319115cc.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='Quality Insurance Products and Services' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive" />
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                      <Throw Exception="[new SystemException(errorMessage)]" sap:VirtualizedContainerService.HintSize="338,25.3333333333333" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                    </Sequence>
+                  </uix:NCheckState.IfExists>
+                  <uix:NCheckState.IfNotExists>
+                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="400,544.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,96" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Record saved successfully&quot;]" />
+                      <uix:NGetText DisplayName="Get Text 'text Record No.'" sap:VirtualizedContainerService.HintSize="338,159.333333333333" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="cb90efed-9a2e-498d-8157-893e34532630" Version="V1">
+                        <uix:NGetText.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="88, 241, 144, 36" ElementType="InputBox" FriendlyName="'text Record No.'" FullSelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Record No.' role='text' /&gt;" FuzzySelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='Record No.' role='text' /&gt;" Guid="5bba591d-c24b-4cef-a53b-4382cf496108" ImageBase64="" InformativeScreenshot="5c6badea4c77c618d5dd99b79920bfeb.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='QIPS' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                        </uix:NGetText.Target>
+                        <uix:NGetText.Text>
+                          <OutArgument x:TypeArguments="x:String">[out_RecordNumber]</OutArgument>
+                        </uix:NGetText.Text>
+                      </uix:NGetText>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,96" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Record number: &quot;+out_RecordNumber]" />
+                    </Sequence>
+                  </uix:NCheckState.IfNotExists>
+                  <uix:NCheckState.Target>
+                    <uix:TargetAnchorable DesignTimeRectangle="796, 469, 350, 173" ElementType="InputBox" FriendlyName="'text Disability Amount'" FullSelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='*' role='internal frame' /&gt;" FuzzySelectorArgument="&lt;java name='Other Coverage Data Entry*' role='internal frame' /&gt;&lt;java name='*' role='internal frame' /&gt;" Guid="3bfe1f39-cddd-44ca-9017-667a6395b4a9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJQAAAAoCAYAAAAYNNPaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAACESURBVHhe7dIhAcAwEACxGqrLWZuZkqHin4mDAXGQtZ93oCIUKaFICUVKKFJCkRKKlFCk1vnuQEUoUkKREoqUUKSEIiUUKaFICUVKKFJCkRKKlFCkhCIlFCmhSAlFSihSQpESipRQpIQiJRQpoUgJRUooUkKREoqUUKSEIiUUKaEI3fkBJFeyYNu7JBEAAAAASUVORK5CYII=" InformativeScreenshot="46a2e83b4ed0512fbe59c27f029afcb6.png" ScopeSelectorArgument="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='Quality Insurance Products and Services' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                  </uix:NCheckState.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NCheckState>
+              </Sequence>
+            </ActivityAction>
+          </uix:NApplicationCard.Body>
+          <uix:NApplicationCard.TargetApp>
+            <uix:TargetApp Area="0, 0, 0, 0" FilePath="[in_QIPSApplicationFullPath]" IconBase64="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" InformativeScreenshot="c34b4dc04b4d3dbab3e3c0a899e863b9.png" Selector="&lt;wnd app='java*.exe' cls='SunAwtFrame' title='Quality Insurance Products and Services' /&gt;" />
+          </uix:NApplicationCard.TargetApp>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </uix:NApplicationCard>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="422,147" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="416,78" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Error" Message="[exception.Message+&quot; at source &quot;+exception.Source]" />
+              <Throw Exception="[new system.Exception(&quot;Checkbox selection failed: &quot;+exception.Message+&quot; at source &quot;+exception.Source)]" sap:VirtualizedContainerService.HintSize="354,25" sap2010:WorkflowViewState.IdRef="Throw_2" />
+              <Rethrow sap:VirtualizedContainerService.HintSize="354,25" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>
