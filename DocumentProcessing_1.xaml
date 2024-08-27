@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1097.33333333333,7747</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1097.33333333333,7808.66666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="54">
@@ -120,7 +120,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Document Processing" sap:VirtualizedContainerService.HintSize="1107.33333333333,7722" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Document Processing" sap:VirtualizedContainerService.HintSize="1107.33333333333,7744" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="DocClassificationConfigFolderPath" />
       <Variable x:TypeArguments="p9:DocumentTaxonomy" Name="taxonomy" />
@@ -145,7 +145,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1045.33333333333,96" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Start Document Processing..&quot;]" />
-    <Assign sap:VirtualizedContainerService.HintSize="1045.33333333333,63.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="1045.33333333333,85.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[DocClassificationConfigFolderPath]</OutArgument>
       </Assign.To>
@@ -256,47 +256,47 @@
       </p:DigitizeDocument.OCREngine>
     </p:DigitizeDocument>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1045.33333333333,96" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Number of pages: &quot;+Convert.ToString(DOM.Pages.Count)]" />
-    <p2:ClassifyDocumentScope ClassificationResults="[classificationResults]" DisplayName="Classify Document Scope" DocumentObjectModel="[DOM]" DocumentPath="[inputFilePath]" DocumentText="[documentText]" sap:VirtualizedContainerService.HintSize="1045.33333333333,70" sap2010:WorkflowViewState.IdRef="ClassifyDocumentScope_2" Taxonomy="[taxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UIe579cf82b45e4a789e4d5893e76832f7&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;ses.coi.acord25&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord25&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ses.coi.acord23&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord23&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ses.coi.acord27&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord27&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ses.coi.General&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.General&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ses.coi.acord24&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord24&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ses.coi.acord28&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord28&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true}}}},&quot;ClassifierMinimumConfidence&quot;:{&quot;UIe579cf82b45e4a789e4d5893e76832f7&quot;:&quot;0&quot;},&quot;DocumentTypesByPersistenceId&quot;:{&quot;UIe579cf82b45e4a789e4d5893e76832f7&quot;:[]}}">
+    <p2:ClassifyDocumentScope ClassificationResults="[classificationResults]" DisplayName="Classify Document Scope" DocumentObjectModel="[DOM]" DocumentPath="[inputFilePath]" DocumentText="[documentText]" sap:VirtualizedContainerService.HintSize="478,550" sap2010:WorkflowViewState.IdRef="ClassifyDocumentScope_2" Taxonomy="[taxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UIe579cf82b45e4a789e4d5893e76832f7&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;ses.coi.acord25&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord25&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ses.coi.acord23&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord23&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ses.coi.acord27&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord27&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ses.coi.General&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.General&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ses.coi.acord24&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord24&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ses.coi.acord28&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord28&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true}}}},&quot;ClassifierMinimumConfidence&quot;:{&quot;UIe579cf82b45e4a789e4d5893e76832f7&quot;:&quot;0&quot;},&quot;DocumentTypesByPersistenceId&quot;:{&quot;UIe579cf82b45e4a789e4d5893e76832f7&quot;:[]}}">
       <p2:ClassifyDocumentScope.Classifiers>
-        <p2:IntelligentKeywordClassifier LearningData="{x:Null}" ApiKey="v1oAoX3OAMKALk6WNl0hietF4ZanWw1owNLtKFz3Sv0EifqwxpQ0sRij16qoJtBuejTWy3vBfKXdV+1ysuc4Xg==" DisplayName="Intelligent Keyword Classifier" Endpoint="https://du.uipath.com/svc/intelligentkeywords" sap:VirtualizedContainerService.HintSize="234,216" sap2010:WorkflowViewState.IdRef="IntelligentKeywordClassifier_2" LearningFilePath="\\rpa_prod.ga.afginc.com\RPA$\SES\COI.Extraction\DEV\DocumentClassificationConfig\IntelligentKeyword.json" PerformDocumentSplitting="True" PersistenceId="UIe579cf82b45e4a789e4d5893e76832f7" SendDocumentsForAlgorithmImprovements="True" TimeoutMs="[ClassificationTimeout]" UsePageNumbers="False">
+        <p2:IntelligentKeywordClassifier LearningData="{x:Null}" ApiKey="v1oAoX3OAMKALk6WNl0hietF4ZanWw1owNLtKFz3Sv0EifqwxpQ0sRij16qoJtBuejTWy3vBfKXdV+1ysuc4Xg==" DisplayName="Intelligent Keyword Classifier" Endpoint="https://du.uipath.com/svc/intelligentkeywords" sap:VirtualizedContainerService.HintSize="234,216" sap2010:WorkflowViewState.IdRef="IntelligentKeywordClassifier_2" LearningFilePath="DocumentProcessing\IntelligentKeyword.json" PerformDocumentSplitting="True" PersistenceId="UIe579cf82b45e4a789e4d5893e76832f7" SendDocumentsForAlgorithmImprovements="True" TimeoutMs="[ClassificationTimeout]" UsePageNumbers="False">
           <p2:IntelligentKeywordClassifier.ClassifierResult>
             <OutArgument x:TypeArguments="p3:ClassifierResult">
-              <DelegateArgumentReference x:TypeArguments="p3:ClassifierResult" sap2010:WorkflowViewState.IdRef="DelegateArgumentReference`1_3">
+              <DelegateArgumentReference x:TypeArguments="p3:ClassifierResult">
                 <DelegateOutArgument x:TypeArguments="p3:ClassifierResult" Name="ClassifierResult" />
               </DelegateArgumentReference>
             </OutArgument>
           </p2:IntelligentKeywordClassifier.ClassifierResult>
           <p2:IntelligentKeywordClassifier.DocumentObjectModel>
             <InArgument x:TypeArguments="p4:Document">
-              <DelegateArgumentValue x:TypeArguments="p4:Document" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_14">
+              <DelegateArgumentValue x:TypeArguments="p4:Document">
                 <DelegateInArgument x:TypeArguments="p4:Document" Name="DocumentObjectModel" />
               </DelegateArgumentValue>
             </InArgument>
           </p2:IntelligentKeywordClassifier.DocumentObjectModel>
           <p2:IntelligentKeywordClassifier.DocumentPath>
             <InArgument x:TypeArguments="x:String">
-              <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_15">
+              <DelegateArgumentValue x:TypeArguments="x:String">
                 <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
               </DelegateArgumentValue>
             </InArgument>
           </p2:IntelligentKeywordClassifier.DocumentPath>
           <p2:IntelligentKeywordClassifier.DocumentText>
             <InArgument x:TypeArguments="x:String">
-              <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_13">
+              <DelegateArgumentValue x:TypeArguments="x:String">
                 <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
               </DelegateArgumentValue>
             </InArgument>
           </p2:IntelligentKeywordClassifier.DocumentText>
           <p2:IntelligentKeywordClassifier.DocumentTypes>
             <InArgument x:TypeArguments="p3:ClassifierDocumentType[]">
-              <DelegateArgumentValue x:TypeArguments="p3:ClassifierDocumentType[]" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_17">
+              <DelegateArgumentValue x:TypeArguments="p3:ClassifierDocumentType[]">
                 <DelegateInArgument x:TypeArguments="p3:ClassifierDocumentType[]" Name="DocumentTypes" />
               </DelegateArgumentValue>
             </InArgument>
           </p2:IntelligentKeywordClassifier.DocumentTypes>
           <p2:IntelligentKeywordClassifier.PredictionId>
             <InArgument x:TypeArguments="x:String">
-              <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_16">
+              <DelegateArgumentValue x:TypeArguments="x:String">
                 <DelegateInArgument x:TypeArguments="x:String" Name="PredictionId" />
               </DelegateArgumentValue>
             </InArgument>
@@ -318,7 +318,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <p2:ClassifyDocumentScope ClassificationResults="[classificationResults]" DisplayName="Classify Document Scope - old" DocumentObjectModel="[DOM]" DocumentPath="[inputFilePath]" DocumentText="[documentText]" sap:VirtualizedContainerService.HintSize="338,70" sap2010:WorkflowViewState.IdRef="ClassifyDocumentScope_1" Taxonomy="[taxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UIe579cf82b45e4a789e4d5893e76832f7&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;ses.coi.acord25&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord25&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ses.coi.acord23&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord23&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ses.coi.acord27&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord27&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ses.coi.General&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.General&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ses.coi.acord24&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord24&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ses.coi.acord28&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord28&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true}}}},&quot;ClassifierMinimumConfidence&quot;:{&quot;UIe579cf82b45e4a789e4d5893e76832f7&quot;:&quot;0&quot;},&quot;DocumentTypesByPersistenceId&quot;:{&quot;UIe579cf82b45e4a789e4d5893e76832f7&quot;:[]}}">
+          <p2:ClassifyDocumentScope ClassificationResults="[classificationResults]" DisplayName="Classify Document Scope - old" DocumentObjectModel="[DOM]" DocumentPath="[inputFilePath]" DocumentText="[documentText]" sap:VirtualizedContainerService.HintSize="388,70" sap2010:WorkflowViewState.IdRef="ClassifyDocumentScope_1" Taxonomy="[taxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UIe579cf82b45e4a789e4d5893e76832f7&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;ses.coi.acord25&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord25&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ses.coi.acord23&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord23&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ses.coi.acord27&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord27&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ses.coi.General&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.General&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ses.coi.acord24&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord24&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;ses.coi.acord28&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;ses.coi.acord28&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true}}}},&quot;ClassifierMinimumConfidence&quot;:{&quot;UIe579cf82b45e4a789e4d5893e76832f7&quot;:&quot;0&quot;},&quot;DocumentTypesByPersistenceId&quot;:{&quot;UIe579cf82b45e4a789e4d5893e76832f7&quot;:[]}}">
             <p2:ClassifyDocumentScope.Classifiers>
               <p2:IntelligentKeywordClassifier LearningData="{x:Null}" ApiKey="v1oAoX3OAMKALk6WNl0hietF4ZanWw1owNLtKFz3Sv0EifqwxpQ0sRij16qoJtBuejTWy3vBfKXdV+1ysuc4Xg==" DisplayName="Intelligent Keyword Classifier" Endpoint="https://du.uipath.com/svc/intelligentkeywords" sap:VirtualizedContainerService.HintSize="233.6,212.8" sap2010:WorkflowViewState.IdRef="IntelligentKeywordClassifier_1" LearningFilePath="DocumentProcessing\IntelligentKeyword.json" PerformDocumentSplitting="True" PersistenceId="UIe579cf82b45e4a789e4d5893e76832f7" SendDocumentsForAlgorithmImprovements="True" TimeoutMs="[ClassificationTimeout]" UsePageNumbers="False">
                 <p2:IntelligentKeywordClassifier.ClassifierResult>
@@ -678,49 +678,49 @@
                             </p7:MachineLearningExtractor.AvailableMLSkills>
                             <p7:MachineLearningExtractor.DocumentBounds>
                               <InArgument x:TypeArguments="p5:ResultsDocumentBounds">
-                                <DelegateArgumentValue x:TypeArguments="p5:ResultsDocumentBounds" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_37">
+                                <DelegateArgumentValue x:TypeArguments="p5:ResultsDocumentBounds">
                                   <DelegateInArgument x:TypeArguments="p5:ResultsDocumentBounds" Name="DocumentBounds" />
                                 </DelegateArgumentValue>
                               </InArgument>
                             </p7:MachineLearningExtractor.DocumentBounds>
                             <p7:MachineLearningExtractor.DocumentObjectModel>
                               <InArgument x:TypeArguments="p4:Document">
-                                <DelegateArgumentValue x:TypeArguments="p4:Document" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_39">
+                                <DelegateArgumentValue x:TypeArguments="p4:Document">
                                   <DelegateInArgument x:TypeArguments="p4:Document" Name="DocumentObjectModel" />
                                 </DelegateArgumentValue>
                               </InArgument>
                             </p7:MachineLearningExtractor.DocumentObjectModel>
                             <p7:MachineLearningExtractor.DocumentPath>
                               <InArgument x:TypeArguments="x:String">
-                                <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_40">
+                                <DelegateArgumentValue x:TypeArguments="x:String">
                                   <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
                                 </DelegateArgumentValue>
                               </InArgument>
                             </p7:MachineLearningExtractor.DocumentPath>
                             <p7:MachineLearningExtractor.DocumentText>
                               <InArgument x:TypeArguments="x:String">
-                                <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_38">
+                                <DelegateArgumentValue x:TypeArguments="x:String">
                                   <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
                                 </DelegateArgumentValue>
                               </InArgument>
                             </p7:MachineLearningExtractor.DocumentText>
                             <p7:MachineLearningExtractor.ExtractorDocumentType>
                               <InArgument x:TypeArguments="p8:ExtractorDocumentType">
-                                <DelegateArgumentValue x:TypeArguments="p8:ExtractorDocumentType" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_36">
+                                <DelegateArgumentValue x:TypeArguments="p8:ExtractorDocumentType">
                                   <DelegateInArgument x:TypeArguments="p8:ExtractorDocumentType" Name="ExtractorDocumentType" />
                                 </DelegateArgumentValue>
                               </InArgument>
                             </p7:MachineLearningExtractor.ExtractorDocumentType>
                             <p7:MachineLearningExtractor.ExtractorResult>
                               <OutArgument x:TypeArguments="p8:ExtractorResult">
-                                <DelegateArgumentReference x:TypeArguments="p8:ExtractorResult" sap2010:WorkflowViewState.IdRef="DelegateArgumentReference`1_7">
+                                <DelegateArgumentReference x:TypeArguments="p8:ExtractorResult">
                                   <DelegateOutArgument x:TypeArguments="p8:ExtractorResult" Name="ExtractorResult" />
                                 </DelegateArgumentReference>
                               </OutArgument>
                             </p7:MachineLearningExtractor.ExtractorResult>
                             <p7:MachineLearningExtractor.PredictionId>
                               <InArgument x:TypeArguments="x:String">
-                                <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_41">
+                                <DelegateArgumentValue x:TypeArguments="x:String">
                                   <DelegateInArgument x:TypeArguments="x:String" Name="PredictionId" />
                                 </DelegateArgumentValue>
                               </InArgument>
@@ -732,49 +732,49 @@
                             </p7:MachineLearningExtractor.AvailableMLSkills>
                             <p7:MachineLearningExtractor.DocumentBounds>
                               <InArgument x:TypeArguments="p5:ResultsDocumentBounds">
-                                <DelegateArgumentValue x:TypeArguments="p5:ResultsDocumentBounds" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_43">
+                                <DelegateArgumentValue x:TypeArguments="p5:ResultsDocumentBounds">
                                   <DelegateInArgument x:TypeArguments="p5:ResultsDocumentBounds" Name="DocumentBounds" />
                                 </DelegateArgumentValue>
                               </InArgument>
                             </p7:MachineLearningExtractor.DocumentBounds>
                             <p7:MachineLearningExtractor.DocumentObjectModel>
                               <InArgument x:TypeArguments="p4:Document">
-                                <DelegateArgumentValue x:TypeArguments="p4:Document" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_45">
+                                <DelegateArgumentValue x:TypeArguments="p4:Document">
                                   <DelegateInArgument x:TypeArguments="p4:Document" Name="DocumentObjectModel" />
                                 </DelegateArgumentValue>
                               </InArgument>
                             </p7:MachineLearningExtractor.DocumentObjectModel>
                             <p7:MachineLearningExtractor.DocumentPath>
                               <InArgument x:TypeArguments="x:String">
-                                <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_46">
+                                <DelegateArgumentValue x:TypeArguments="x:String">
                                   <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
                                 </DelegateArgumentValue>
                               </InArgument>
                             </p7:MachineLearningExtractor.DocumentPath>
                             <p7:MachineLearningExtractor.DocumentText>
                               <InArgument x:TypeArguments="x:String">
-                                <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_44">
+                                <DelegateArgumentValue x:TypeArguments="x:String">
                                   <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
                                 </DelegateArgumentValue>
                               </InArgument>
                             </p7:MachineLearningExtractor.DocumentText>
                             <p7:MachineLearningExtractor.ExtractorDocumentType>
                               <InArgument x:TypeArguments="p8:ExtractorDocumentType">
-                                <DelegateArgumentValue x:TypeArguments="p8:ExtractorDocumentType" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_42">
+                                <DelegateArgumentValue x:TypeArguments="p8:ExtractorDocumentType">
                                   <DelegateInArgument x:TypeArguments="p8:ExtractorDocumentType" Name="ExtractorDocumentType" />
                                 </DelegateArgumentValue>
                               </InArgument>
                             </p7:MachineLearningExtractor.ExtractorDocumentType>
                             <p7:MachineLearningExtractor.ExtractorResult>
                               <OutArgument x:TypeArguments="p8:ExtractorResult">
-                                <DelegateArgumentReference x:TypeArguments="p8:ExtractorResult" sap2010:WorkflowViewState.IdRef="DelegateArgumentReference`1_8">
+                                <DelegateArgumentReference x:TypeArguments="p8:ExtractorResult">
                                   <DelegateOutArgument x:TypeArguments="p8:ExtractorResult" Name="ExtractorResult" />
                                 </DelegateArgumentReference>
                               </OutArgument>
                             </p7:MachineLearningExtractor.ExtractorResult>
                             <p7:MachineLearningExtractor.PredictionId>
                               <InArgument x:TypeArguments="x:String">
-                                <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_47">
+                                <DelegateArgumentValue x:TypeArguments="x:String">
                                   <DelegateInArgument x:TypeArguments="x:String" Name="PredictionId" />
                                 </DelegateArgumentValue>
                               </InArgument>
@@ -786,49 +786,49 @@
                             </p7:MachineLearningExtractor.AvailableMLSkills>
                             <p7:MachineLearningExtractor.DocumentBounds>
                               <InArgument x:TypeArguments="p5:ResultsDocumentBounds">
-                                <DelegateArgumentValue x:TypeArguments="p5:ResultsDocumentBounds" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_49">
+                                <DelegateArgumentValue x:TypeArguments="p5:ResultsDocumentBounds">
                                   <DelegateInArgument x:TypeArguments="p5:ResultsDocumentBounds" Name="DocumentBounds" />
                                 </DelegateArgumentValue>
                               </InArgument>
                             </p7:MachineLearningExtractor.DocumentBounds>
                             <p7:MachineLearningExtractor.DocumentObjectModel>
                               <InArgument x:TypeArguments="p4:Document">
-                                <DelegateArgumentValue x:TypeArguments="p4:Document" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_51">
+                                <DelegateArgumentValue x:TypeArguments="p4:Document">
                                   <DelegateInArgument x:TypeArguments="p4:Document" Name="DocumentObjectModel" />
                                 </DelegateArgumentValue>
                               </InArgument>
                             </p7:MachineLearningExtractor.DocumentObjectModel>
                             <p7:MachineLearningExtractor.DocumentPath>
                               <InArgument x:TypeArguments="x:String">
-                                <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_52">
+                                <DelegateArgumentValue x:TypeArguments="x:String">
                                   <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
                                 </DelegateArgumentValue>
                               </InArgument>
                             </p7:MachineLearningExtractor.DocumentPath>
                             <p7:MachineLearningExtractor.DocumentText>
                               <InArgument x:TypeArguments="x:String">
-                                <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_50">
+                                <DelegateArgumentValue x:TypeArguments="x:String">
                                   <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
                                 </DelegateArgumentValue>
                               </InArgument>
                             </p7:MachineLearningExtractor.DocumentText>
                             <p7:MachineLearningExtractor.ExtractorDocumentType>
                               <InArgument x:TypeArguments="p8:ExtractorDocumentType">
-                                <DelegateArgumentValue x:TypeArguments="p8:ExtractorDocumentType" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_48">
+                                <DelegateArgumentValue x:TypeArguments="p8:ExtractorDocumentType">
                                   <DelegateInArgument x:TypeArguments="p8:ExtractorDocumentType" Name="ExtractorDocumentType" />
                                 </DelegateArgumentValue>
                               </InArgument>
                             </p7:MachineLearningExtractor.ExtractorDocumentType>
                             <p7:MachineLearningExtractor.ExtractorResult>
                               <OutArgument x:TypeArguments="p8:ExtractorResult">
-                                <DelegateArgumentReference x:TypeArguments="p8:ExtractorResult" sap2010:WorkflowViewState.IdRef="DelegateArgumentReference`1_9">
+                                <DelegateArgumentReference x:TypeArguments="p8:ExtractorResult">
                                   <DelegateOutArgument x:TypeArguments="p8:ExtractorResult" Name="ExtractorResult" />
                                 </DelegateArgumentReference>
                               </OutArgument>
                             </p7:MachineLearningExtractor.ExtractorResult>
                             <p7:MachineLearningExtractor.PredictionId>
                               <InArgument x:TypeArguments="x:String">
-                                <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_53">
+                                <DelegateArgumentValue x:TypeArguments="x:String">
                                   <DelegateInArgument x:TypeArguments="x:String" Name="PredictionId" />
                                 </DelegateArgumentValue>
                               </InArgument>
