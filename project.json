@@ -1,5 +1,6 @@
 {
   "name": "Gaig.Rpa.Library.SES.DocumentExtraction",
+  "projectId": "5ac03fb0-e551-4a2f-8788-40ba039e7480",
   "description": "Extracts data from COI documents",
   "main": "NewActivity.xaml",
   "dependencies": {
@@ -14,7 +15,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "22.10.10.0",
-  "projectVersion": "1.0.3",
+  "projectVersion": "1.0.4",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -44,7 +45,8 @@
       "ignoredFiles": []
     },
     "fileInfoCollection": [],
-    "modernBehavior": false
+    "modernBehavior": false,
+    "saveToCloud": false
   },
   "expressionLanguage": "VisualBasic",
   "isTemplate": false,
